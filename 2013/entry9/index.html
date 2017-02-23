@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>John Hunter Excellence Plotting Contest &#8212; 2013 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
+  <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+        href="../../_static/css/bootstrap.min.css"
+	media="screen" />
+    <script src="../../_static/js/jquery.js"
+          type="text/javascript"></script>
+  <script src="../../_static/js/bootstrap.min.js"
+          type="text/javascript"></script>
+
+
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet"
+        href="../../_static/css/jhepc.css"
+         media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif'
+        rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans'
+        rel='stylesheet' type='text/css'>
+
+
+
+  </head>
+  <body role="document"><div class="navbar">
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../_static/logos/logo_1.png" \>
+    </a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Home
+          <img src="../../_static/logos/button_orange.png">
+        </a>
+        </li>
+      <li><a href="../../gallery.html">Gallery
+          <img src="../../_static/logos/button_blue.png">
+          </a>
+      </li>
+      <li><a href="../../about.html">About
+          <img src="../../_static/logos/button_green.png">
+          </a></li>
+    </ul>
+  </div>
+  
+    <div class="container">
+  
+  
+  <div class="section" id="entry-9">
+<h1>Entry 9<a class="headerlink" href="#entry-9" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/entry9.png" src="../../_images/entry9.png" />
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Lucía Avalle</li>
+<li>Leoncio Juan Ernesto Lopez</li>
+</ul>
+</div>
+<div class="section" id="products">
+<h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/31032013_25Cm900_Data.txt.png" download=""><code class="xref download docutils literal"><span class="pre">Image</span></code></a></li>
+<li><a class="reference download internal" href="../../_downloads/plotting-contest-LuciaAvalle2013_last_version.pdf" download=""><code class="xref download docutils literal"><span class="pre">Further</span> <span class="pre">information</span> <span class="pre">in</span> <span class="pre">PDF</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="c1"># Copyright 2011</span>
+<span class="c1">#Lucía B. Avalle</span>
+<span class="c1">#Group of Electrochemistry. Experimental and Theoretical Aspects. Institute of Physics Enrique Gaviola (IFEG), FaMAF, UNC</span>
+<span class="c1"># Córdoba, Argentina</span>
+
+<span class="c1"># This program is free software: you can redistribute it and/or modify</span>
+<span class="c1"># it under the terms of the GNU General Public License as published by</span>
+<span class="c1"># the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c1"># (at your option) any later version.</span>
+
+<span class="c1"># This program is distributed in the hope that it will be useful,</span>
+<span class="c1"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c1"># GNU General Public License for more details.</span>
+<span class="c1">#Using the GNU GPL will require that all the released improved versions be free software. </span>
+<span class="c1">#This means you can avoid the risk of having to compete with a proprietary modified version of your own work.</span>
+
+<span class="c1"># You should have received a copy of the GNU General Public License</span>
+<span class="c1"># along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+
+<span class="c1"># Authors:</span>
+<span class="c1">#       Leoncio Juan Ernesto Lopez (anicholo at gmail dot com)</span>
+
+<span class="c1"># $Id: pulsefile.py 9 2011-06-06 00:27:31A takenoko $</span>
+
+
+<span class="sd">&quot;&quot;&quot;The potentiostatic pulses applied to the solid/liquid interface consist of different amplitudes, starting at a potential where no hydrogen evolves.&quot;&quot;&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;This program was developed to load transient data from file at location filename. The in files are formated according the output of two-channel oscilloscope. The out files have only time and CH* (*= 1, 2) columns space-separated. The structure and program code meet educational goals&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">infilename</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>  <span class="n">outfilename</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;Usage:&quot;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;infile outfile&quot;</span><span class="p">;</span> <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">infilename</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">infilename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">();</span> <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#empty list</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="mi">24</span><span class="p">:]:</span> <span class="c1">#eliminates the headers</span>
+        <span class="n">arglist</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">arglist</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">arglist</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="c1">#start from zero: space[0],space[1],space[2],number[3],number[4],</span>
+	<span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1">#tuple list</span>
+	<span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">values</span>
+
+<span class="k">def</span> <span class="nf">dump_data</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="c1"># write out 2-column files:</span>
+    <span class="n">of</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)):</span>
+        <span class="n">of</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%12.5e</span><span class="s1"> </span><span class="si">%12.5e</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> 
+    <span class="n">of</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">infilename</span><span class="p">)</span> <span class="c1">#function call for execution</span>
+<span class="n">dump_data</span><span class="p">(</span><span class="n">outfilename</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s1">&#39;We are done!&#39;</span>
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/pulsefile.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span></code></a></li>
+<li><a class="reference download internal" href="../../_downloads/plotting-contest-LuciaAvalle2013_last_version.tex" download=""><code class="xref download docutils literal"><span class="pre">LaTeX</span> <span class="pre">source</span> <span class="pre">for</span> <span class="pre">further</span> <span class="pre">information</span></code></a></li>
+<li><a class="reference download internal" href="../../_downloads/F000CH1PotentialPulse.CSV" download=""><code class="xref download docutils literal"><span class="pre">CSV</span> <span class="pre">data</span></code></a></li>
+<li><a class="reference download internal" href="../../_downloads/31032013_25Cm900_Data.txt" download=""><code class="xref download docutils literal"><span class="pre">TXT</span> <span class="pre">data</span></code></a></li>
+</ul>
+</div>
+</div>
+
+
+  
+    </div>
+  
+<footer class="footer">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Scipy Conference, designed by Nelle Varoquaux.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2.<br/>
+    </p>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>John Hunter Excellence Plotting Contest &#8212; 2013 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
+  <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+        href="../../_static/css/bootstrap.min.css"
+	media="screen" />
+    <script src="../../_static/js/jquery.js"
+          type="text/javascript"></script>
+  <script src="../../_static/js/bootstrap.min.js"
+          type="text/javascript"></script>
+
+
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet"
+        href="../../_static/css/jhepc.css"
+         media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif'
+        rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans'
+        rel='stylesheet' type='text/css'>
+
+
+
+  </head>
+  <body role="document"><div class="navbar">
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../_static/logos/logo_1.png" \>
+    </a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Home
+          <img src="../../_static/logos/button_orange.png">
+        </a>
+        </li>
+      <li><a href="../../gallery.html">Gallery
+          <img src="../../_static/logos/button_blue.png">
+          </a>
+      </li>
+      <li><a href="../../about.html">About
+          <img src="../../_static/logos/button_green.png">
+          </a></li>
+    </ul>
+  </div>
+  
+    <div class="container">
+  
+  
+  <div class="section" id="entry-14">
+<h1>Entry 14<a class="headerlink" href="#entry-14" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/entry14.png" src="../../_images/entry14.png" />
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Ludwig Schwardt</li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>My submission illustrates Bayesian inference in action. Suppose you
+have a known non-linear function <code class="xref py py-obj docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">f(x)</span></code> relating two random
+variables <code class="xref py py-obj docutils literal"><span class="pre">x</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">y</span></code>. The variable <code class="xref py py-obj docutils literal"><span class="pre">y</span></code> has been measured but you really
+want to know the variable <code class="xref py py-obj docutils literal"><span class="pre">x</span></code>.</p>
+<p>For every value of <code class="xref py py-obj docutils literal"><span class="pre">x</span></code> you can write down the distribution of <code class="xref py py-obj docutils literal"><span class="pre">y</span></code> -
+this is the likelihood function <code class="xref py py-obj docutils literal"><span class="pre">p(y|x)</span></code>. To simplify things we are
+assuming a Gaussian likelihood with a mean and variance that depends
+on <code class="xref py py-obj docutils literal"><span class="pre">x</span></code>. This is illustrated in the left panel of the plot with a blue
+line highlighting the conditional mean <code class="xref py py-obj docutils literal"><span class="pre">E[y|x]</span></code>.</p>
+<p>We now build up the joint distribution <code class="xref py py-obj docutils literal"><span class="pre">p(x,</span> <span class="pre">y)</span></code> as the product of
+<code class="xref py py-obj docutils literal"><span class="pre">p(y|x)</span></code> and the prior distribution <code class="xref py py-obj docutils literal"><span class="pre">p(x)</span></code> on the unknown variable
+<code class="xref py py-obj docutils literal"><span class="pre">x</span></code>. We take as <code class="xref py py-obj docutils literal"><span class="pre">p(x)</span> <span class="pre">=</span> <span class="pre">1</span></code> to indicate that we are quite ignorant
+about <code class="xref py py-obj docutils literal"><span class="pre">x</span></code>&#8216;s value before we observe <code class="xref py py-obj docutils literal"><span class="pre">y</span></code>. This is how it should be if
+<code class="xref py py-obj docutils literal"><span class="pre">y</span></code> is a high-quality measurement of <code class="xref py py-obj docutils literal"><span class="pre">x</span></code>. The joint pdf is shown in
+the middle panel as a contour plot with logarithmically spaced contour
+levels, together with the two conditional means that come into play
+(more on that soon!). The likelihood function is obtained as vertical
+slices through the joint pdf, as the left panel shows.</p>
+<p>Now you want to go in the opposite direction: for a fixed value of <code class="xref py py-obj docutils literal"><span class="pre">y</span></code>
+you want to determine the distribution of <code class="xref py py-obj docutils literal"><span class="pre">x</span></code>, called the posterior
+<code class="xref py py-obj docutils literal"><span class="pre">p(x|y)</span></code>. This is related to the joint pdf by Bayes&#8217; theorem, one
+version of which states that <code class="xref py py-obj docutils literal"><span class="pre">p(x|y)</span> <span class="pre">=</span> <span class="pre">p(x,</span> <span class="pre">y)</span> <span class="pre">/</span> <span class="pre">p(y)</span></code>. The data
+distribution <code class="xref py py-obj docutils literal"><span class="pre">p(y)</span></code> is merely a scaling factor in this example that
+does not affect the mean, variance or shape of the posterior pdf and
+can therefore be mostly ignored. The posterior pdf is obtained by
+literally slicing the joint pdf (which happens to be equal to the
+likelihood) in the opposite (horizontal) direction, as illustrated in
+the final right panel of the plot. The posterior mean <code class="xref py py-obj docutils literal"><span class="pre">E[x|y]</span></code> is
+indicated by a red line in the middle and right panels. The resulting
+distributions are <em>not</em> Gaussian and the posterior mean <code class="xref py py-obj docutils literal"><span class="pre">E[x|y]</span></code> is
+not the same as the likelihood mean <code class="xref py py-obj docutils literal"><span class="pre">E[y|x]</span></code> (although both cases are
+close matches!).</p>
+<p>An important reason to use Bayesian inference is that it produces not
+only an good estimate of <code class="xref py py-obj docutils literal"><span class="pre">x</span></code> via the posterior mean <code class="xref py py-obj docutils literal"><span class="pre">E[x|y]</span></code> but also
+an estimate of the uncertainty of this estimate via the posterior
+variance <code class="xref py py-obj docutils literal"><span class="pre">var[x|y]</span></code>. This variance depends both on the likelihood
+variance and the slope of the non-linear function in the region of the
+measured <code class="xref py py-obj docutils literal"><span class="pre">y</span></code> value. As can be seen in the right panel, the posterior
+distribution quickly becomes very broad for large values of <code class="xref py py-obj docutils literal"><span class="pre">y</span></code>
+because both the likelihood variance increases and the non-linear
+function slope decreases with increasing <code class="xref py py-obj docutils literal"><span class="pre">x</span></code>.</p>
+<p>[As an aside, the posterior mean and variance were estimated from the
+peak region of the posterior pdf via Laplace approximation - but
+that&#8217;s another story...]</p>
+<p>This specific data set arose in my studies of the effects of
+quantisation on the measurement of power in a digital
+radiometer. Given the quantised output of the radiometer it is
+possible to get an improved estimate of the true input power as well
+as its uncertainty. An earlier version of these plots appeared in my
+talk entitled &#8220;Bayesian Quantisation Correction&#8221; at the CALIM workshop
+(<a class="reference external" href="http://calim2012.ska.ac.za/">http://calim2012.ska.ac.za/</a>) in December 2012 (linked here
+(<a class="reference external" href="http://calim2012.ska.ac.za/calim2012_schwardt.pdf?attredirects=0">http://calim2012.ska.ac.za/calim2012_schwardt.pdf?attredirects=0</a>)).</p>
+<p>Best regards,</p>
+<p>Ludwig Schwardt</p>
+</div>
+<div class="section" id="products">
+<h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/bayes_in_action.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1">#</span>
+<span class="c1"># An example of Bayesian inference in action.</span>
+<span class="c1">#</span>
+<span class="c1"># Suppose you have a known non-linear function y = f(x) relating two random</span>
+<span class="c1"># variables x and y. The variable y has been measured but you really want</span>
+<span class="c1"># to know the variable x.</span>
+<span class="c1">#</span>
+<span class="c1"># For every value of x you can write down the distribution of y - this is the</span>
+<span class="c1"># likelihood function p(y|x). To simplify things we are assuming a Gaussian</span>
+<span class="c1"># likelihood with a mean and variance that depends on x. This is illustrated in</span>
+<span class="c1"># the left panel of the plot with a blue line highlighting the conditional</span>
+<span class="c1"># mean E[y|x].</span>
+<span class="c1">#</span>
+<span class="c1"># We now build up the joint distribution p(x, y) as the product of p(y|x) and</span>
+<span class="c1"># the prior distribution p(x) on the unknown variable x. We take as p(x) = 1 to</span>
+<span class="c1"># indicate that we are quite ignorant about x&#39;s value before we observe y.</span>
+<span class="c1"># This is how it should be if y is a high-quality measurement of x. The joint</span>
+<span class="c1"># pdf is shown in the middle panel as a contour plot with logarithmically</span>
+<span class="c1"># spaced contour levels, together with the two conditional means that come into</span>
+<span class="c1"># play (more on that soon!). The likelihood function is obtained as vertical</span>
+<span class="c1"># slices through the joint pdf, as the left panel shows.</span>
+<span class="c1">#</span>
+<span class="c1"># Now you want to go in the opposite direction: for a fixed value of y you want</span>
+<span class="c1"># to determine the distribution of x, called the posterior p(x|y). This is</span>
+<span class="c1"># related to the joint pdf by Bayes&#39; theorem, one version of which states that</span>
+<span class="c1"># p(x|y) = p(x, y) / p(y). The data distribution p(y) is merely a scaling</span>
+<span class="c1"># factor in this example that does not affect the mean, variance or shape of</span>
+<span class="c1"># the posterior pdf and can therefore be mostly ignored. The posterior pdf is</span>
+<span class="c1"># obtained by literally slicing the joint pdf (which happens to be equal to the</span>
+<span class="c1"># likelihood) in the opposite (horizontal) direction, as illustrated in the</span>
+<span class="c1"># final right panel of the plot. The posterior mean E[x|y] is indicated by a</span>
+<span class="c1"># red line in the middle and right panels. The resulting distributions are</span>
+<span class="c1"># *not* Gaussian and the posterior mean E[x|y] is not the same as the</span>
+<span class="c1"># likelihood mean E[y|x] (although both cases are close matches!).</span>
+<span class="c1">#</span>
+<span class="c1"># An important reason to use Bayesian inference is that it produces not only an</span>
+<span class="c1"># good estimate of x via the posterior mean E[x|y] but also an estimate of the</span>
+<span class="c1"># uncertainty of this estimate via the posterior variance var[x|y]. This</span>
+<span class="c1"># variance depends both on the likelihood variance and the slope of the</span>
+<span class="c1"># non-linear function in the region of the measured y value. As can be seen in</span>
+<span class="c1"># the right panel, the posterior distribution quickly becomes very broad for</span>
+<span class="c1"># large values of y because both the likelihood variance increases and the</span>
+<span class="c1"># non-linear function slope decreases with increasing x.</span>
+<span class="c1">#</span>
+<span class="c1"># [As an aside, the posterior mean and variance were estimated from the peak</span>
+<span class="c1"># region of the posterior pdf via Laplace approximation - but that&#39;s another</span>
+<span class="c1"># story...]</span>
+<span class="c1">#</span>
+<span class="c1"># Ludwig Schwardt</span>
+<span class="c1"># 2 April 2013</span>
+<span class="c1">#</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="k">import</span> <span class="n">Polygon</span>
+
+<span class="c1"># Known Gaussian likelihood function</span>
+<span class="n">y_mean_poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">9.46057773e-07</span><span class="p">,</span>   <span class="mf">7.97357134e-05</span><span class="p">,</span>  <span class="o">-</span><span class="mf">2.33606477e-03</span><span class="p">,</span>
+                         <span class="mf">1.35757717e-02</span><span class="p">,</span>   <span class="mf">9.81285305e-01</span><span class="p">,</span>   <span class="mf">7.55670064e-02</span><span class="p">])</span>
+<span class="n">y_std_poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="o">-</span><span class="mf">1.03983346e-06</span><span class="p">,</span>   <span class="mf">7.12224246e-05</span><span class="p">,</span>  <span class="o">-</span><span class="mf">1.58714348e-03</span><span class="p">,</span>
+                         <span class="mf">5.10456409e-03</span><span class="p">,</span>   <span class="mf">3.18049306e-01</span><span class="p">,</span>   <span class="mf">1.86474919e-02</span><span class="p">])</span>
+<span class="c1"># Laplace approximation to posterior pdf</span>
+<span class="n">x_mean_poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>  <span class="mf">3.48713751e-13</span><span class="p">,</span>  <span class="o">-</span><span class="mf">5.47403988e-11</span><span class="p">,</span>   <span class="mf">3.79337347e-09</span><span class="p">,</span>
+                         <span class="o">-</span><span class="mf">1.52725422e-07</span><span class="p">,</span>   <span class="mf">3.95653738e-06</span><span class="p">,</span>  <span class="o">-</span><span class="mf">6.90106364e-05</span><span class="p">,</span>
+                          <span class="mf">8.24113654e-04</span><span class="p">,</span>  <span class="o">-</span><span class="mf">6.71723321e-03</span><span class="p">,</span>   <span class="mf">3.65721645e-02</span><span class="p">,</span>
+                         <span class="o">-</span><span class="mf">1.25640610e-01</span><span class="p">,</span>   <span class="mf">2.50191385e-01</span><span class="p">,</span>   <span class="mf">6.66814979e-01</span><span class="p">,</span>
+                          <span class="mf">5.22707935e-03</span><span class="p">])</span>
+<span class="n">x_std_poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>  <span class="mf">2.08172854e-14</span><span class="p">,</span>  <span class="o">-</span><span class="mf">3.51865677e-12</span><span class="p">,</span>   <span class="mf">2.64235598e-10</span><span class="p">,</span>
+                        <span class="o">-</span><span class="mf">1.16011048e-08</span><span class="p">,</span>   <span class="mf">3.29731026e-07</span><span class="p">,</span>  <span class="o">-</span><span class="mf">6.34011062e-06</span><span class="p">,</span>
+                         <span class="mf">8.35950083e-05</span><span class="p">,</span>  <span class="o">-</span><span class="mf">7.46810111e-04</span><span class="p">,</span>   <span class="mf">4.34255165e-03</span><span class="p">,</span>
+                        <span class="o">-</span><span class="mf">1.43962515e-02</span><span class="p">,</span>   <span class="mf">2.53788636e-02</span><span class="p">,</span>   <span class="mf">2.33516467e-01</span><span class="p">,</span>
+                         <span class="mf">5.90923630e-03</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">joint_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Unnormalised pdf height of joint distribution p(x, y).&quot;&quot;&quot;</span>
+    <span class="n">mean_y</span><span class="p">,</span> <span class="n">std_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">y_mean_poly</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">y_std_poly</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="n">mean_y</span><span class="p">)</span> <span class="o">/</span> <span class="n">std_y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">std_y</span>
+
+<span class="k">def</span> <span class="nf">data_pdf_max</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Approximate maximum pdf height of marginal data distribution p(y).&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">x_std_poly</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Create grid on which to evaluate pdfs</span>
+<span class="n">x_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">y_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">25.</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">x_grid_fine</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">y_grid_fine</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">25.</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">joint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_grid_fine</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_grid_fine</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">nx</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_grid_fine</span><span class="p">):</span>
+    <span class="n">joint</span><span class="p">[</span><span class="n">nx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">joint_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_grid_fine</span><span class="p">)</span>
+<span class="n">y_mean_fine</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">y_mean_poly</span><span class="p">,</span> <span class="n">x_grid_fine</span><span class="p">)</span>
+<span class="n">x_mean_fine</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">x_mean_poly</span><span class="p">,</span> <span class="n">y_grid_fine</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">xg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_grid</span><span class="p">):</span>
+    <span class="n">xslice</span> <span class="o">=</span> <span class="n">joint_pdf</span><span class="p">(</span><span class="n">xg</span><span class="p">,</span> <span class="n">y_grid_fine</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Polygon</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">xg</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">xslice</span><span class="p">,</span> <span class="n">y_grid_fine</span><span class="p">],</span>
+                         <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="n">n</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_grid_fine</span><span class="p">,</span> <span class="n">y_mean_fine</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">autoscale_view</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Measured output y&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Likelihood p(y|x)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">])</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x_grid_fine</span><span class="p">,</span> <span class="n">y_grid_fine</span><span class="p">,</span> <span class="n">joint</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+           <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_grid_fine</span><span class="p">,</span> <span class="n">y_mean_fine</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;E[y | x]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_mean_fine</span><span class="p">,</span> <span class="n">y_grid_fine</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;E[x | y]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">autoscale_view</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Desired input x&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Joint pdf p(x, y)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">yg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_grid</span><span class="p">):</span>
+    <span class="n">yslice</span> <span class="o">=</span> <span class="n">joint_pdf</span><span class="p">(</span><span class="n">x_grid_fine</span><span class="p">,</span> <span class="n">yg</span><span class="p">)</span>
+    <span class="c1"># Let p(x|y) = p(x, y) / p(y) and scale height of slice to correct for p(y)</span>
+    <span class="n">yslice</span> <span class="o">*=</span> <span class="n">data_pdf_max</span><span class="p">(</span><span class="n">yg</span><span class="p">)</span> <span class="o">/</span> <span class="n">yslice</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Polygon</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">x_grid_fine</span><span class="p">,</span> <span class="n">yg</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">yslice</span><span class="p">],</span>
+                         <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="n">n</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_mean_fine</span><span class="p">,</span> <span class="n">y_grid_fine</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">autoscale_view</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Posterior p(x|y)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">])</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;bayes_in_action.pdf&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/bayes_in_action.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span></code></a></li>
+</ul>
+</div>
+</div>
+
+
+  
+    </div>
+  
+<footer class="footer">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Scipy Conference, designed by Nelle Varoquaux.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2.<br/>
+    </p>
+</footer>
+  </body>
+</html>

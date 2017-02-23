@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>John Hunter Excellence Plotting Contest &#8212; 2013 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
+  <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+        href="../../_static/css/bootstrap.min.css"
+	media="screen" />
+    <script src="../../_static/js/jquery.js"
+          type="text/javascript"></script>
+  <script src="../../_static/js/bootstrap.min.js"
+          type="text/javascript"></script>
+
+
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet"
+        href="../../_static/css/jhepc.css"
+         media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif'
+        rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans'
+        rel='stylesheet' type='text/css'>
+
+
+
+  </head>
+  <body role="document"><div class="navbar">
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../_static/logos/logo_1.png" \>
+    </a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Home
+          <img src="../../_static/logos/button_orange.png">
+        </a>
+        </li>
+      <li><a href="../../gallery.html">Gallery
+          <img src="../../_static/logos/button_blue.png">
+          </a>
+      </li>
+      <li><a href="../../about.html">About
+          <img src="../../_static/logos/button_green.png">
+          </a></li>
+    </ul>
+  </div>
+  
+    <div class="container">
+  
+  
+  <div class="section" id="entry-13">
+<h1>Entry 13<a class="headerlink" href="#entry-13" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/entry131.png" src="../../_images/entry131.png" />
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>David Ketcheson</li>
+<li>Manuel Quezada de Luna</li>
+</ul>
+</div>
+<div class="section" id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<p>This figure presents results of simulations and analysis from the manuscript
+&#8220;Two- dimensional wave propagation in layered periodic media&#8221;, by Manuel
+Quezada de Luna and David I. Ketcheson (submitted; pre-print <a class="reference external" href="http://arxiv.org/abs/1309.6666">available</a>).  It
+shows how an initial Gaussian perturbation centered at the origin is propagated
+in a medium consisting of alternating horizontal layers of two different
+materials (the inset shows the structure of the medium). The four central plots
+show the two-dimensional wave behavior, while the adjacent line plots show
+traces of the solution along the lines <span class="math">\(x = 0\)</span> and <span class="math">\(y = 0\)</span>. Each
+quadrant shows an experiment in a medium with different properties.</p>
+<p>The top left plot shows the behavior in a homogeneous medium, consisting of an
+expanding wavefront with no dispersion. This is shown simply for reference.</p>
+<p>In the bottom left plot, the layers have identical sound speeds but different
+impedances. Waves propagating in the vertical direction in this medium undergo
+repeated reflection and exhibit dispersion as a result. This is evident in the
+trace plot to the left, where the initial pulse has developed an oscillatory
+tail. This effect is fairly well understood.</p>
+<p>The main subject of the manuscript is depicted in the top right plot, where the
+two layers have identical impedance, but different sound speeds. In this case
+there is no reflection, but waves traveling horizontally undergo diffraction.
+Remarkably, the large-scale effect of this diffraction is also to create an
+effective dispersion, as seen in the horizontal trace above the plot.</p>
+<p>Finally, the bottom right plot involves a medium in which both the impedance
+and the sound speed vary. Effective dispersion is evident in both coordinate
+directions. The reflective dispersion happens to be more pronounced in this
+case, but in general either effect can be dominant, depending on the material
+properties.</p>
+<p>The main plots and the red traces are the results of finite volume simulations
+of the variable-coefficient acoustic wave equation - with no dispersive terms.
+In the manuscript, a high order effective medium dispersive wave equation is
+derived by formal homogenization techniques. The black dotted lines are traces
+computed by solving these effective medium equations. Excellent agreement is
+observed in all cases.</p>
+<p>Finally, the small plots in the corners show the effective dispersion relation
+for each medium, based on the effective medium equations. The effective sound
+speed is plotted as a function of the wavenumber components <span class="math">\(k_x, k_y\)</span> .
+The axes of these plots are also oriented with the origin toward the center. As
+suggested by the central plots, it can be seen from the dispersion relations
+that low-frequency waves always travel fastest in the horizontal direction. But
+for high-frequency waves, propagation in the vertical can be faster if there is
+a large sound speed contrast and small impedance contrast.</p>
+<p>Note that the straight horizontal lines that can be seen in some places are the
+effect of the medium structure, and have nothing to do with grid resolution,
+which is much too fine to be seen on the plot.</p>
+</div>
+<div class="section" id="products">
+<h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/layered_media_dispersion.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/layered_media_plot.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span></code></a></li>
+</ul>
+</div>
+</div>
+
+
+  
+    </div>
+  
+<footer class="footer">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Scipy Conference, designed by Nelle Varoquaux.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2.<br/>
+    </p>
+</footer>
+  </body>
+</html>

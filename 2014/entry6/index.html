@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>John Hunter Excellence Plotting Contest &#8212; 2013 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
+  <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+        href="../../_static/css/bootstrap.min.css"
+	media="screen" />
+    <script src="../../_static/js/jquery.js"
+          type="text/javascript"></script>
+  <script src="../../_static/js/bootstrap.min.js"
+          type="text/javascript"></script>
+
+
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet"
+        href="../../_static/css/jhepc.css"
+         media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif'
+        rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans'
+        rel='stylesheet' type='text/css'>
+
+
+
+  </head>
+  <body role="document"><div class="navbar">
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../_static/logos/logo_1.png" \>
+    </a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Home
+          <img src="../../_static/logos/button_orange.png">
+        </a>
+        </li>
+      <li><a href="../../gallery.html">Gallery
+          <img src="../../_static/logos/button_blue.png">
+          </a>
+      </li>
+      <li><a href="../../about.html">About
+          <img src="../../_static/logos/button_green.png">
+          </a></li>
+    </ul>
+  </div>
+  
+    <div class="container">
+  
+  
+  <div class="section" id="entry-6">
+<h1>Entry 6<a class="headerlink" href="#entry-6" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/entry61.png" src="../../_images/entry61.png" />
+<p><a class="reference external" href="https://vimeo.com/70466967">Animated</a></p>
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Thomas Robitaille</li>
+</ul>
+</div>
+<div class="section" id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<p>Understanding the formation of stars and planets can help us
+understand how our own Solar system came into existence. Our current
+picture of star formation is that turbulent motions and shocks in
+large interstellar clouds of gas (mainly molecular hydrogen and
+Helium) and dust (typically micron-sized carbonaceous and
+silicate-based grains) cause peaks to form in the density structure,
+which then become unstable to collapse under the influence of
+gravity. As the material collapses, a protostar forms and material
+then accretes onto it, mainly through an accretion disk. Later in
+time, as the accretion from the large-scale envelope of gas and dust
+slows down, planets may form in the disk surrounding the young star,
+before the disk itself disappears, typically after a few million
+years.</p>
+<p>One way to gain further insight into these process is via numerical
+simulations. These typically start from a large cloud of gas and dust,
+and follow the evolution of the cloud under the influence of various
+physical processes such as gravity, pressure, radiation, and so
+on. This visualization shows an example of a star that has just
+started to form in such a simulation. The density structure
+highlighted in blue to green iso-contours shows that an accretion disk
+has already formed. Using the density structure and the properties of
+the forming star, I used <a class="reference external" href="http://www.hyperion-rt.org">Hyperion</a>, a
+Python and Fortran Monte-Carlo radiative transfer code to compute the
+heating of the material, and derive the temperature structure. Because
+the disk provides a shield for the radiation, the temperature is
+highest along two ‘lobes’ that are perpendicular to the disk.  An
+animated fly-around can be viewed <a class="reference external" href="https://vimeo.com/70466967">here</a>.</p>
+<p>The visualization of the density and temperature was done using <a class="reference external" href="http://yt-project.org">yt</a>, a Python package that can produce
+state-of-the-art volume renderings, and the images for the density and
+temperature were then combined in Python, before being plotted with
+<a class="reference external" href="http://matplotlib.org">Matplotlib</a> along with two colorbars.  The
+star formation simulation used as input for the density structure was
+computed by Dr. Stella Offner (Yale).</p>
+</div>
+<div class="section" id="products">
+<h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/forming_star.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/scipy_2014_entry.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span></code></a></li>
+</ul>
+</div>
+</div>
+
+
+  
+    </div>
+  
+<footer class="footer">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Scipy Conference, designed by Nelle Varoquaux.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2.<br/>
+    </p>
+</footer>
+  </body>
+</html>

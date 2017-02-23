@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>John Hunter Excellence Plotting Contest &#8212; 2013 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
+  <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+        href="../../_static/css/bootstrap.min.css"
+	media="screen" />
+    <script src="../../_static/js/jquery.js"
+          type="text/javascript"></script>
+  <script src="../../_static/js/bootstrap.min.js"
+          type="text/javascript"></script>
+
+
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet"
+        href="../../_static/css/jhepc.css"
+         media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif'
+        rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans'
+        rel='stylesheet' type='text/css'>
+
+
+
+  </head>
+  <body role="document"><div class="navbar">
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../_static/logos/logo_1.png" \>
+    </a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Home
+          <img src="../../_static/logos/button_orange.png">
+        </a>
+        </li>
+      <li><a href="../../gallery.html">Gallery
+          <img src="../../_static/logos/button_blue.png">
+          </a>
+      </li>
+      <li><a href="../../about.html">About
+          <img src="../../_static/logos/button_green.png">
+          </a></li>
+    </ul>
+  </div>
+  
+    <div class="container">
+  
+  
+  <div class="section" id="entry-6">
+<h1>Entry 6<a class="headerlink" href="#entry-6" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/entry6.png" src="../../_images/entry6.png" />
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Marcel Pinheiro Caraciolo</li>
+</ul>
+</div>
+<div class="section" id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<p>I used Python, Numpy, Matplotlib and PIL.</p>
+</div>
+<div class="section" id="research-and-motivation">
+<h2>Research and motivation<a class="headerlink" href="#research-and-motivation" title="Permalink to this headline">¶</a></h2>
+<p>I&#8217;ve been looking after some visualization tools for social networks
+in order to present a visual representation of the the Atepassar
+social network, helping me to see how the users are connected and
+visualize the friendships between them.</p>
+<p>AtePassar is a famous educational Brazilian social network for
+students all around Brazil that study for exams to get a civil public
+job. Nowadays I work for as a scientist chief responsible of creating
+and bringing collective intelligence to improve the features of the
+website. I was performing some analysis over the social network and
+how the students interacted. So I decided to create a new
+visualization that showed how geography and political borders affected
+where students lived relative to their friends.</p>
+<p>The social network snapshot was taken on March, 2013 has more than 200k
+users from several cities of the country.</p>
+</div>
+<div class="section" id="products">
+<h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/Atepassar_Visualization.pdf" download=""><code class="xref download docutils literal"><span class="pre">Atepassar_Visualization.pdf</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#-*-coding:utf-8-*-</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Visualizing geolocated friendships within a social network in a map.</span>
+
+<span class="sd">The input-file must be a dict, which the elements are:</span>
+
+<span class="sd">{ ((latO,longO),(latD,longD)): qtd, ...}</span>
+
+<span class="sd">(latO,longO) are the latitude and longitude of the origin location. Both are float values.</span>
+<span class="sd">(latD,longD) ate the latitude and longitude of the destiny location. Both are float values.</span>
+
+<span class="sd">qtd: An integer that represents the number of connections between both coordinates (cities).</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;caraciol@gmail.com&#39;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;0.1&#39;</span>
+
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">from</span> <span class="nn">optparse</span> <span class="k">import</span> <span class="n">OptionParser</span>
+<span class="kn">from</span> <span class="nn">optparse</span> <span class="k">import</span> <span class="n">SUPPRESS_USAGE</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sqrt</span><span class="p">,</span><span class="n">log</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;error while importing the PIL library.  please install it:  easy_install PIL&#39;</span><span class="p">)</span>
+    <span class="n">exit</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pylab</span> <span class="k">import</span> <span class="n">get_cmap</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="k">import</span> <span class="n">ColorConverter</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="k">import</span> <span class="n">rgb2hex</span>
+    <span class="n">converter</span> <span class="o">=</span> <span class="n">ColorConverter</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;error while importing the MatPlotLib library.  please install it:  easy_install matplotlib&#39;</span><span class="p">)</span>
+    <span class="n">exit</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">logspace</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;error while importing the Numpy library.  please install it:  easy_install numpy&#39;</span><span class="p">)</span>
+    <span class="n">exit</span><span class="p">()</span>
+
+
+<span class="n">MAX_LATITUDE</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">MIN_LATITUDE</span> <span class="o">=</span> <span class="o">-</span> <span class="mf">34.0</span>
+
+<span class="n">MAX_LONGITUDE</span> <span class="o">=</span> <span class="o">-</span> <span class="mf">33.0</span>
+<span class="n">MIN_LONGITUDE</span> <span class="o">=</span> <span class="o">-</span><span class="mf">75.0</span>
+
+<span class="n">LATITUDE_TOTAL</span> <span class="o">=</span> <span class="n">MIN_LATITUDE</span> <span class="o">-</span>  <span class="n">MAX_LATITUDE</span>
+<span class="n">LONGITUDE_TOTAL</span> <span class="o">=</span> <span class="n">MAX_LONGITUDE</span> <span class="o">-</span> <span class="n">MIN_LONGITUDE</span>
+
+
+<span class="k">def</span> <span class="nf">geo2pixel</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">lat</span><span class="o">+</span> <span class="p">(</span><span class="n">MAX_LATITUDE</span><span class="o">*-</span><span class="mi">1</span><span class="p">))</span>  <span class="o">*</span> <span class="n">height</span><span class="o">/</span><span class="n">LATITUDE_TOTAL</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">lon</span><span class="o">+</span><span class="p">(</span><span class="n">MIN_LONGITUDE</span><span class="o">*-</span><span class="mi">1</span><span class="p">))</span>  <span class="o">*</span> <span class="n">width</span><span class="o">/</span><span class="n">LONGITUDE_TOTAL</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="nb">round</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">run_main</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">inp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">input_file</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+        <span class="n">geo_input</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+        <span class="n">inp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="s1">&#39;Problems in opening the </span><span class="si">%s</span><span class="s1">. Check the file.&#39;</span> <span class="o">%</span> <span class="n">options</span><span class="o">.</span><span class="n">input_file</span>
+        <span class="n">exit</span><span class="p">()</span>
+
+    <span class="n">width</span><span class="p">,</span><span class="n">height</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">options</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+    <span class="n">mode_colormap</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">mode</span>
+    <span class="n">n_connections</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">n_connections</span>
+
+    <span class="c1">#Create image</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGBA&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+    <span class="n">geo_final</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1">#Remove the same start == end and repeated cities (start,end) == (end,start).</span>
+    <span class="k">for</span> <span class="n">origem</span><span class="p">,</span><span class="n">destino</span> <span class="ow">in</span> <span class="n">geo_input</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">origem</span> <span class="o">!=</span> <span class="n">destino</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">geo_final</span><span class="o">.</span><span class="n">has_key</span><span class="p">((</span><span class="n">origem</span><span class="p">,</span><span class="n">destino</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">geo_final</span><span class="o">.</span><span class="n">has_key</span><span class="p">((</span><span class="n">destino</span><span class="p">,</span><span class="n">origem</span><span class="p">)):</span>
+                    <span class="n">geo_final</span><span class="o">.</span><span class="n">setdefault</span><span class="p">((</span><span class="n">origem</span><span class="p">,</span><span class="n">destino</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="n">geo_final</span><span class="p">[(</span><span class="n">origem</span><span class="p">,</span><span class="n">destino</span><span class="p">)]</span> <span class="o">+=</span> <span class="n">geo_input</span><span class="p">[(</span><span class="n">origem</span><span class="p">,</span><span class="n">destino</span><span class="p">)]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">geo_final</span><span class="o">.</span><span class="n">setdefault</span><span class="p">((</span><span class="n">destino</span><span class="p">,</span><span class="n">origem</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="n">geo_final</span><span class="p">[(</span><span class="n">destino</span><span class="p">,</span><span class="n">origem</span><span class="p">)]</span> <span class="o">+=</span> <span class="n">geo_input</span><span class="p">[(</span><span class="n">origem</span><span class="p">,</span><span class="n">destino</span><span class="p">)]</span>
+
+    <span class="n">matrix_geo</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1">#Find all valid cities and calculate the distances</span>
+    <span class="n">max_distance</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10000000</span>
+    <span class="k">for</span> <span class="n">origem</span><span class="p">,</span><span class="n">destino</span> <span class="ow">in</span> <span class="n">geo_final</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">geo_final</span><span class="p">[(</span><span class="n">origem</span><span class="p">,</span><span class="n">destino</span><span class="p">)]</span> <span class="o">&gt;</span> <span class="n">n_connections</span><span class="p">:</span>
+            <span class="n">x1</span><span class="p">,</span><span class="n">y1</span> <span class="o">=</span> <span class="n">geo2pixel</span><span class="p">(</span><span class="n">origem</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">origem</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
+            <span class="n">x2</span><span class="p">,</span><span class="n">y2</span> <span class="o">=</span> <span class="n">geo2pixel</span><span class="p">(</span><span class="n">destino</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">destino</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
+            <span class="n">distance</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">40000</span><span class="o">/</span><span class="mf">360.0</span>
+            <span class="k">if</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="n">max_distance</span><span class="p">:</span>  <span class="n">max_distance</span> <span class="o">=</span> <span class="n">distance</span>
+            <span class="n">matrix_geo</span><span class="p">[(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">),(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">distance</span>
+
+    <span class="c1">#Sort by distance.</span>
+    <span class="n">sorted_matrix</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">matrix_geo</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="n">key</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">cmap</span> <span class="o">=</span>  <span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;jet&#39;</span><span class="p">)</span>  <span class="k">if</span> <span class="n">mode_colormap</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span> <span class="k">else</span> <span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;jet&#39;</span><span class="p">)</span>
+    <span class="n">dist_bins</span> <span class="o">=</span> <span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">log</span><span class="p">(</span><span class="n">max_distance</span><span class="p">)</span><span class="o">/</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="mi">255</span><span class="p">)</span>
+
+
+    <span class="c1">#Plot using the correct colormap</span>
+    <span class="k">for</span> <span class="p">((</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">),(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">)),</span><span class="n">distance</span> <span class="ow">in</span> <span class="n">sorted_matrix</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dist_bins</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="n">dist_bins</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">and</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">dist_bins</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="k">break</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">rgb2hex</span><span class="p">(</span><span class="n">converter</span><span class="o">.</span><span class="n">to_rgb</span><span class="p">(</span><span class="n">cmap</span><span class="p">(</span><span class="mi">255</span><span class="o">-</span><span class="n">i</span><span class="p">)))</span>
+        <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">([(</span><span class="n">y1</span><span class="p">,</span><span class="n">x1</span><span class="p">),(</span><span class="n">y2</span><span class="p">,</span><span class="n">x2</span><span class="p">)],</span> <span class="n">p</span> <span class="p">)</span>
+
+    <span class="c1">#Save the image.</span>
+    <span class="n">im</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">output_file</span><span class="p">)</span>
+
+
+
+
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">OptionParser</span><span class="p">(</span><span class="n">usage</span><span class="o">=</span><span class="n">SUPPRESS_USAGE</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;geocialMapper v.</span><span class="si">%s</span><span class="se">\n</span><span class="s1">By </span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">__version__</span><span class="p">,</span><span class="n">__author__</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s2">&quot;Type --help parameter for help.</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s1">&#39;-i&#39;</span><span class="p">,</span><span class="s1">&#39;--input-file&#39;</span><span class="p">,</span><span class="n">dest</span><span class="o">=</span><span class="s1">&#39;input_file&#39;</span><span class="p">,</span>
+                       <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Pickle object file with coordinates and quantity&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">,</span><span class="s1">&#39;--size&#39;</span><span class="p">,</span><span class="n">dest</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">,</span>
+                       <span class="n">help</span><span class="o">=</span><span class="s1">&#39;image dimmensions height,width&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;--output-file&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;output_file&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span> <span class="s1">&#39;map.jpg&#39;</span><span class="p">,</span>
+                       <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output file for saving the image&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;--colormap&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;wb&#39;</span><span class="p">,</span>
+                       <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Mode of colormap used: wb, all&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s1">&#39;-p&#39;</span><span class="p">,</span> <span class="s1">&#39;--connection&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;n_connections&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">,</span>
+                       <span class="n">help</span><span class="o">=</span> <span class="s1">&#39;Threshold for the number of interconnections between cities&#39;</span><span class="p">)</span>
+
+    <span class="p">(</span><span class="n">options</span><span class="p">,</span><span class="n">args</span><span class="p">)</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">options</span><span class="o">.</span><span class="n">input_file</span><span class="p">:</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;You must specifiy a valid pickle object to load data (-i parameter) !&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">options</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;You must specifiy the dimmensions of the image (-s parameter) !&#39;</span><span class="p">)</span>
+
+    <span class="n">run_main</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/plot2.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span></code></a></li>
+<li><a class="reference external" href="https://github.com/marcelcaraciolo/Geo-Friendship-Visualization">Github project</a></li>
+</ul>
+</div>
+</div>
+
+
+  
+    </div>
+  
+<footer class="footer">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Scipy Conference, designed by Nelle Varoquaux.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2.<br/>
+    </p>
+</footer>
+  </body>
+</html>

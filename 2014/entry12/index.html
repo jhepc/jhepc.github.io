@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>John Hunter Excellence Plotting Contest &#8212; 2013 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
+  <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+        href="../../_static/css/bootstrap.min.css"
+	media="screen" />
+    <script src="../../_static/js/jquery.js"
+          type="text/javascript"></script>
+  <script src="../../_static/js/bootstrap.min.js"
+          type="text/javascript"></script>
+
+
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet"
+        href="../../_static/css/jhepc.css"
+         media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif'
+        rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans'
+        rel='stylesheet' type='text/css'>
+
+
+
+  </head>
+  <body role="document"><div class="navbar">
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../_static/logos/logo_1.png" \>
+    </a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Home
+          <img src="../../_static/logos/button_orange.png">
+        </a>
+        </li>
+      <li><a href="../../gallery.html">Gallery
+          <img src="../../_static/logos/button_blue.png">
+          </a>
+      </li>
+      <li><a href="../../about.html">About
+          <img src="../../_static/logos/button_green.png">
+          </a></li>
+    </ul>
+  </div>
+  
+    <div class="container">
+  
+  
+  <div class="section" id="entry-12">
+<h1>Entry 12<a class="headerlink" href="#entry-12" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/entry121.png" src="../../_images/entry121.png" />
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Filipe Pires Alvarenga Fernandes</li>
+</ul>
+</div>
+<div class="section" id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<p>The IPython notebook demonstrate how to calculate and plot the mixing
+percentage of the three major <a class="reference external" href="http://glossary.ametsoc.org/wiki/Water_mass">water masses</a> from the South Atlantic.</p>
+<p>The data used is freely available, and consist of temperature and salinity
+downloaded from the <a class="reference external" href="http://www.nodc.noaa.gov/OC5/WOA09/pr_woa09.html">World Ocean Atlas 2009</a>.</p>
+<p>The mixing percentage of each water mass is obtained by solving a linear system
+of equations where we have 3 unknowns and three equations according to <a class="reference external" href="http://www.elsevier.com/books/temperature-salinity-analysis-of-world-ocean-waters/mamayev/978-0-444-41251-5">Mamayev
+(1975)</a>:</p>
+<p><span class="math">\(m_1T_1 + m_2T_2 + m_3T_3 = T\)</span></p>
+<p><span class="math">\(m_1S_1 + m_2S_2 + m_3S_3 = S\)</span></p>
+<p><span class="math">\(m_1 + m_2 + m_3 = 1\)</span></p>
+<p>where,
+- <span class="math">\(T, S\)</span> are the temperature and salinity data where we want to know the mixing rations;
+- <span class="math">\(T_n, S_n\)</span> the temperature and salinity pairs for the water masses core 1, 2, and 3;
+- <span class="math">\(m_1, m_2, m_3\)</span> the water mass mixing percentages we are looking for.</p>
+<p>The water masses we will investigate are the: South Atlantic Central Water
+<a class="reference external" href="http://glossary.ametsoc.org/wiki/Central_water">SACW</a> formed in the center of the South Atlantic Subtropical Gyre; the
+Antarctic Intermediary Water <a class="reference external" href="http://en.wikipedia.org/wiki/Antarctic_Intermediate_Water">AAIW</a> formed in the Antarctic Convergence zone
+originated by upwelling the North Atlantic Deep Water <a class="reference external" href="http://en.wikipedia.org/wiki/North_Atlantic_Deep_Water">NADW</a>; and last but not
+least the NADW, which is formed across the Greenland-Iceland-Scotland Ridge.
+We could include more water masses in the analysis, for example: the Antarctic
+Bottom Water <a class="reference external" href="http://en.wikipedia.org/wiki/Antarctic_Bottom_Water">AABW</a> and/or the Circumpolar Deep Water <a class="reference external" href="http://en.wikipedia.org/wiki/Circumpolar_deep_water">CDW</a>.  However, that
+would require two more equations, and therefore two more conservative
+properties.  Temperature and Salinity are the easiest conservative variables to
+compute.  Other variables like oxygen, silicate and etc could be used, but
+would require a special treatment to became quasi-conservative to be included
+in the analysis.</p>
+<p>The contouring of the mixing percentages is a simple, yet powerful tool to
+understand mixing the ocean.</p>
+<p>Caveat: The water masses cores used here were modified and may not correspond
+directly with the cores found in the <a class="reference external" href="http://archimer.ifremer.fr/doc/00110/22090/19731.pdf">literature</a>.  The reason for that was to
+show both the Tropical Water and the South Atlantic Central Water as one water
+mass.</p>
+<p>The figure: Matplotlib allows us to contour the results with three separated
+colormaps, facilitating the interpretation.  A world map inset shows the
+transect (in red) of the data.  In additional, we plot the Temperature-Salinity
+Diagram (T-S), to help visualize each the water mass center.  The T-S diagram
+displays the seawater density (as gray contours) from lighter to heavier water
+(at the top and at the bottom of the figure respectively) and the meridional
+mean of the temperature and salinity.</p>
+<p>interpretation: We can see that we have both AAIW and SACW cores (100%) in our
+domain.  We can also note that, even though the SACW occupies the majority of
+the T-S diagram range, it is not the major water mass in our domain.  Another
+important remark is that the NADW reaches from the North Atlantic all the way
+to the Antarctica, where it mixes with colder and fresher water to creates the
+AAIW.  That is an important part to the global Conveyor Belt (or Thermohaline
+Circulation).</p>
+<p>The &#8220;white&#8221; gap at bottom the contour represents the AABW and the CDW that are
+not resolved in our model.  The overlap of the contour is an evidence of a poor
+choice for the water mass cores (probably bad choices for the water masses
+cores).</p>
+</div>
+<div class="section" id="products">
+<h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/mixing_ratio.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference download internal" href="../../_downloads/water_mass.html" download=""><code class="xref download docutils literal"><span class="pre">IPython</span> <span class="pre">notebook</span></code></a> (<a class="reference download internal" href="../../_downloads/water_mass.ipynb" download=""><code class="xref download docutils literal"><span class="pre">ipynb</span></code></a>)</li>
+</ul>
+</div>
+</div>
+
+
+  
+    </div>
+  
+<footer class="footer">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Scipy Conference, designed by Nelle Varoquaux.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2.<br/>
+    </p>
+</footer>
+  </body>
+</html>
