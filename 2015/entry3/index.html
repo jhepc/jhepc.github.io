@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>John Hunter Excellence Plotting Contest &#8212; 2015 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
+  <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+        href="../../_static/css/bootstrap.min.css"
+	media="screen" />
+    <script src="../../_static/js/jquery.js"
+          type="text/javascript"></script>
+  <script src="../../_static/js/bootstrap.min.js"
+          type="text/javascript"></script>
+
+
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet"
+        href="../../_static/css/jhepc.css"
+         media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif'
+        rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans'
+        rel='stylesheet' type='text/css'>
+
+
+
+  </head>
+  <body role="document"><div class="navbar">
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../_static/logos/logo_1.png" \>
+    </a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Home
+          <img src="../../_static/logos/button_orange.png">
+        </a>
+        </li>
+      <li><a href="../../gallery.html">Gallery
+          <img src="../../_static/logos/button_blue.png">
+          </a>
+      </li>
+      <li><a href="../../about.html">About
+          <img src="../../_static/logos/button_green.png">
+          </a></li>
+    </ul>
+  </div>
+  
+    <div class="container">
+  
+  
+  <div class="section" id="entry-3">
+<h1>Entry 3<a class="headerlink" href="#entry-3" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="../../_images/entry31.png"><img alt="../../_images/entry31.png" src="../../_images/entry31.png" style="width: 750px;" /></a>
+<p><a class="reference external" href="https://vimeo.com/87092212">View video</a></p>
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Alex H. Parker</li>
+</ul>
+<p>This series of 4000 figures is associated with <a class="reference external" href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:0807.3762">work I published in
+2008</a>.</p>
+<p>This animation shows the orbital motions of over 100,000 of the
+asteroids observed by the Sloan Digital Sky Survey (SDSS), with colors
+illustrating the compositional diversity measured by the SDSS
+five-color camera. The relative sizes of each asteroid are also
+illustrated. All main-belt asteroids and Trojan asteroids with orbits
+known to high precision are shown. The animation is rendered with a
+timestep of 3 days. The most surprising result of this animation is
+that compositional gradient of the asteroid belt is clearly visible,
+with green Vesta-family members in the inner belt fading through the
+pink and yellow S-class asteroids to the blue C-class asteroids in the
+outer belt, and onward to the deep red Trojan swarms beyond that. This
+gradient is easily detected when plotting the belt in its component
+orbital elements, but the fact that it appears in physical space as
+well is neatly illustrated here. Occasional diagonal slashes that
+appear in the animation are the SDSS survey beams; these appear
+because the animation is rendered at near the survey epoch.</p>
+<p>The work is rendered in matplotlib, and demonstrates how matplotlb can
+produce semi-cinematic data visualizations (all the visualizations
+<a class="reference external" href="https://vimeo.com/alexhp">here</a> are generated with matplotlib).</p>
+</div>
+<div class="section" id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<p>Running: Download <a class="reference external" href="http://www.astro.washington.edu/users/ivezic/sdssmoc/ADR4.dat">ADR4.dat</a> and
+place in working directory. On first run, ADR4_movie.py (below) will
+build a (huge) database containing ‘moc_orbit’ objects.</p>
+<p>For demo purposes, simply run it as: python ADR4_movie.py 0</p>
+<p>This will render all the frames in sequence.</p>
+</div>
+<div class="section" id="products">
+<h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://vimeo.com/87092212">Video</a></li>
+</ul>
+</div>
+<div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="sd">&quot;&quot;&quot; Animates all the asteroids with reasonable orbits in the SDSS MOC4 catalog, with their mapped colors. &quot;&quot;&quot;</span>
+<span class="n">__author__</span>      <span class="o">=</span>  <span class="s2">&quot;Dr. Alex H Parker&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;alexharrisonparker@gmail.com&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">pylab</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">shelve</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">arctan</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">tan</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">arctan2</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="k">import</span> <span class="n">jv</span>
+
+<span class="k">def</span> <span class="nf">get_color2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">iz</span><span class="p">):</span>
+    <span class="c1">### Generate RGB color from a* and i-z colors</span>
+    <span class="c1">### similar to Parker et al. 2008</span>
+    <span class="c1">### R determined by a*</span>
+    <span class="c1">### B determined by a*</span>
+    <span class="c1">### G determined by iz</span>
+
+    <span class="c1">### The following 9 parameters are adjustable.</span>
+
+    <span class="c1">### the cR and cB parameters adjust the location of the transition from Red to Blue</span>
+    <span class="c1">### the cG parameter adjusts the transition from (Red or Blue) to Green</span>
+    <span class="n">cR</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.15</span> 
+    <span class="n">cB</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.16</span> 
+    <span class="n">cG</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.15</span>
+
+    <span class="c1">### the &quot;s&quot; parameters adjust the relative &quot;strength&quot; of each group. </span>
+    <span class="n">sR</span> <span class="o">=</span> <span class="mf">2.</span>
+    <span class="n">sB</span> <span class="o">=</span> <span class="mf">10.</span>
+    <span class="n">sG</span> <span class="o">=</span> <span class="mf">4.</span>
+
+    <span class="c1">### the &quot;w&quot; parameters adjust the width of the transition from each color group to the others</span>
+    <span class="c1">### (larger &quot;w&quot; means faster transition)</span>
+    <span class="n">wR</span> <span class="o">=</span> <span class="mf">3.</span>
+    <span class="n">wB</span> <span class="o">=</span> <span class="mf">4.</span>
+    <span class="n">wG</span> <span class="o">=</span> <span class="mf">3.</span>
+
+    <span class="c1">###</span>
+    <span class="c1">### GENERATE THE HUES with hyperbolic tangent functions and c, s, and w parameters</span>
+    <span class="c1">###</span>
+
+    <span class="n">R</span> <span class="o">=</span> <span class="n">sR</span><span class="o">*</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span> <span class="n">wR</span><span class="o">*</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span>  <span class="n">cR</span> <span class="p">))</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">sB</span><span class="o">*</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="o">-</span><span class="n">wB</span><span class="o">*</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span>  <span class="n">cB</span> <span class="p">))</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">sG</span><span class="o">*</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="o">-</span><span class="n">wG</span><span class="o">*</span><span class="p">(</span><span class="n">iz</span> <span class="o">-</span> <span class="n">cG</span> <span class="p">))</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>
+
+    <span class="c1">###</span>
+    <span class="c1">### NORMALIZE MAGNITUDE of (R,G,B) to 1</span>
+    <span class="c1">### (requires &quot;math.sqrt&quot; function be available)</span>
+    <span class="c1">###</span>
+
+    <span class="c1">#mag = math.sqrt( R**2 + B**2 + G**2)</span>
+    <span class="n">mag</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span> <span class="p">[</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">]</span> <span class="p">)</span>
+    <span class="n">R</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">B</span> <span class="o">=</span> <span class="n">R</span><span class="o">/</span><span class="n">mag</span><span class="p">,</span> <span class="n">G</span><span class="o">/</span><span class="n">mag</span><span class="p">,</span> <span class="n">B</span><span class="o">/</span><span class="n">mag</span>
+
+    <span class="c1">### return corrected (R,G,B) tuple</span>
+    <span class="k">return</span> <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span>
+
+
+
+<span class="k">class</span> <span class="nc">Point3D</span><span class="p">:</span>
+
+    <span class="c1">### Shamelessly borrowed from http://codentronix.com/2011/04/20/simulation-of-3d-point-rotation-with-python-and-pygame/</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+ 
+    <span class="k">def</span> <span class="nf">rotateX</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Rotates the point around the X axis by the given angle in degrees. &quot;&quot;&quot;</span>
+        <span class="n">rad</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+        <span class="n">cosa</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span>
+        <span class="n">sina</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">cosa</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">sina</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">sina</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">cosa</span>
+        <span class="k">return</span> <span class="n">Point3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+ 
+    <span class="k">def</span> <span class="nf">rotateY</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Rotates the point around the Y axis by the given angle in degrees. &quot;&quot;&quot;</span>
+        <span class="n">rad</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+        <span class="n">cosa</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span>
+        <span class="n">sina</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">cosa</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">sina</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">sina</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">cosa</span>
+        <span class="k">return</span> <span class="n">Point3D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+ 
+    <span class="k">def</span> <span class="nf">rotateZ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Rotates the point around the Z axis by the given angle in degrees. &quot;&quot;&quot;</span>
+        <span class="n">rad</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+        <span class="n">cosa</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span>
+        <span class="n">sina</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">cosa</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">sina</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">sina</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">cosa</span>
+        <span class="k">return</span> <span class="n">Point3D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+ 
+    <span class="k">def</span> <span class="nf">project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">win_width</span><span class="p">,</span> <span class="n">win_height</span><span class="p">,</span> <span class="n">fov</span><span class="p">,</span> <span class="n">viewer_distance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Transforms this 3D point to 2D using a perspective projection. &quot;&quot;&quot;</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="n">fov</span> <span class="o">/</span> <span class="p">(</span><span class="n">viewer_distance</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">factor</span> <span class="o">+</span> <span class="n">win_width</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">factor</span> <span class="o">+</span> <span class="n">win_height</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">Point3D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+
+
+<span class="k">class</span> <span class="nc">moc_orbit</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">line</span> <span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; a line from the SDSS MOC4 file. &#39;&#39;&#39;</span>
+        <span class="sd">&#39;&#39;&#39; assume that line is matched to astorb already &#39;&#39;&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_GM</span> <span class="o">=</span> <span class="mf">0.000295994511</span>
+
+        <span class="c1">### a* color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_astar</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">29</span><span class="p">]</span> <span class="p">)</span>
+
+        <span class="c1">### i-z color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_iz</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">25</span><span class="p">]</span> <span class="p">)</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span> <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_RGB</span> <span class="o">=</span> <span class="n">get_color2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_astar</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_iz</span><span class="p">)</span>
+
+        <span class="c1">### osculating elements</span>
+        <span class="n">D2R</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_epoch</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">49</span><span class="p">]</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sma</span>   <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">50</span><span class="p">]</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span>   <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">51</span><span class="p">]</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_inc</span>   <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">52</span><span class="p">]</span> <span class="p">)</span> <span class="o">*</span> <span class="n">D2R</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_node</span>  <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">53</span><span class="p">]</span> <span class="p">)</span> <span class="o">*</span> <span class="n">D2R</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span>  <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">54</span><span class="p">]</span> <span class="p">)</span> <span class="o">*</span> <span class="n">D2R</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_M</span>     <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">55</span><span class="p">]</span> <span class="p">)</span> <span class="o">*</span> <span class="n">D2R</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tau</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sma</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_GM</span> <span class="p">)</span> <span class="c1">### days!</span>
+
+        <span class="c1">### Absolute magnitude and phase-slope model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_H</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">46</span><span class="p">]</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_G</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">line</span><span class="p">[</span><span class="mi">47</span><span class="p">]</span> <span class="p">)</span>
+
+        <span class="c1">### rotation matrices - generate these beforehand, as they are static</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_P</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sma</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span> <span class="p">[</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span> <span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="p">)</span> <span class="o">-</span> <span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span> <span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="p">),</span>
+                                               <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="p">)</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span> <span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="p">),</span>
+                                               <span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inc</span> <span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_Q</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sma</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span> <span class="p">[</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span> <span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="p">)</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span> <span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="p">),</span>
+                                                                            <span class="o">-</span><span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="p">)</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span> <span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="p">),</span>
+                                                                            <span class="n">sin</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_peri</span> <span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vkep</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_GM</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sma</span> <span class="p">)</span>
+	
+
+    <span class="k">def</span> <span class="nf">pos</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">time_in</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">8</span> <span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;   General-purpose Keplerian -&gt; Cartesian translator. &#39;&#39;&#39;</span>
+        <span class="sd">&#39;&#39;&#39;   Array-ready, though does not do any idiot-proofing checks (yet). &#39;&#39;&#39;</span>
+        <span class="sd">&#39;&#39;&#39;   Returns [ x, y, z ], [vx, vy, vz] &#39;&#39;&#39;</span>
+
+        <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_M</span> <span class="o">+</span> <span class="p">(</span><span class="n">time_in</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_epoch</span><span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tau</span>
+
+        <span class="n">E</span> <span class="o">=</span> <span class="n">M</span> <span class="o">+</span> <span class="p">(</span> <span class="n">jv</span><span class="p">(</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mf">1.0</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span>  <span class="mf">1.0</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span> <span class="mf">1.0</span> <span class="p">)</span> <span class="o">+</span> 
+            <span class="n">jv</span><span class="p">(</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mf">2.0</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span>  <span class="mf">2.0</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span> <span class="mf">2.0</span> <span class="p">)</span> <span class="o">+</span>
+            <span class="n">jv</span><span class="p">(</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mf">3.0</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span>  <span class="mf">3.0</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span> <span class="mf">3.0</span> <span class="p">)</span> <span class="o">+</span>
+            <span class="n">jv</span><span class="p">(</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mf">4.0</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span>  <span class="mf">4.0</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span> <span class="mf">4.0</span> <span class="p">)</span> <span class="o">+</span>
+            <span class="n">jv</span><span class="p">(</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mf">5.0</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span>  <span class="mf">5.0</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span> <span class="mf">5.0</span> <span class="p">)</span> <span class="o">+</span>
+            <span class="n">jv</span><span class="p">(</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mf">6.0</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span>  <span class="mf">6.0</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span> <span class="mf">6.0</span> <span class="p">)</span> <span class="o">+</span>
+            <span class="n">jv</span><span class="p">(</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mf">7.0</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span>  <span class="mf">7.0</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span> <span class="mf">7.0</span> <span class="p">)</span> <span class="o">+</span>
+            <span class="n">jv</span><span class="p">(</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mf">8.0</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span>  <span class="mf">8.0</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span> <span class="mf">8.0</span> <span class="p">)</span> <span class="o">+</span>
+            <span class="n">jv</span><span class="p">(</span>  <span class="mi">9</span><span class="p">,</span>  <span class="mf">9.0</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span>  <span class="mf">9.0</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span> <span class="mf">9.0</span> <span class="p">)</span> <span class="o">+</span>
+            <span class="n">jv</span><span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">10.0</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mf">10.0</span> <span class="p">)</span> <span class="p">)</span>
+
+        <span class="c1">### E is Eccentric Anomoly; we don&#39;t need True Anomoly for formalisms here.</span>
+
+        <span class="n">rv</span> <span class="o">=</span>  <span class="p">(</span> <span class="n">cos</span><span class="p">(</span><span class="n">E</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ecc</span> <span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_P</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">E</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Q</span>   <span class="c1">### &lt;-- Rotated [ x, y, z ]</span>
+
+        <span class="k">return</span> <span class="n">rv</span> 
+
+    
+<span class="k">def</span> <span class="nf">cameraspline</span><span class="p">(</span> <span class="n">frame</span><span class="p">,</span> <span class="n">breaktimes</span><span class="p">,</span> <span class="n">breakvals</span> <span class="p">):</span>
+
+    <span class="sd">&#39;&#39;&#39; Smooth sinusoudal spline for camera position &#39;&#39;&#39;</span>
+    
+    <span class="k">if</span> <span class="n">frame</span> <span class="o">&lt;</span> <span class="nb">min</span><span class="p">(</span><span class="n">breaktimes</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">breakvals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">frame</span> <span class="o">&gt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">breaktimes</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">breakvals</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">breaktimes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">frame</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">startval</span> <span class="o">=</span> <span class="n">breakvals</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">endval</span>   <span class="o">=</span> <span class="n">breakvals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="n">starttime</span> <span class="o">=</span> <span class="n">breaktimes</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">endtime</span>   <span class="o">=</span> <span class="n">breaktimes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="n">period</span> <span class="o">=</span> <span class="p">(</span> <span class="n">endtime</span> <span class="o">-</span> <span class="n">starttime</span> <span class="p">)</span>
+    <span class="n">amp</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span> <span class="n">startval</span> <span class="o">-</span> <span class="n">endval</span> <span class="p">)</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="n">amp</span> <span class="o">*</span> <span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">frame</span> <span class="o">-</span> <span class="n">starttime</span><span class="p">)</span><span class="o">/</span><span class="n">period</span> <span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="p">)</span> <span class="o">+</span> <span class="n">endval</span>
+
+    <span class="k">return</span> <span class="n">func</span>
+
+
+<span class="k">def</span> <span class="nf">draw_ring</span><span class="p">(</span> <span class="n">a</span> <span class="p">):</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span> <span class="p">)</span>
+    <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">L</span> <span class="p">)</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">L</span> <span class="p">)</span> <span class="o">*</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+
+<span class="k">def</span> <span class="nf">do_anim</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s1">&#39;./MOC_MOVIE&#39;</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="s1">&#39;Setting up movie subdirectory ./MOC_MOVIE&#39;</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;mkdir ./MOC_MOVIE&#39;</span><span class="p">)</span>
+
+    <span class="c1">### look for database version of ADR4 with orbit objects</span>
+    <span class="n">database_exists</span> <span class="o">=</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;ADR4.db.dat&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;ADR4.db&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;ADR4.db.db&#39;</span><span class="p">))</span> <span class="c1">### Crude handling of inconsistent behavior by &#39;shelve&#39;</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">database_exists</span><span class="p">:</span>
+
+        <span class="nb">print</span> <span class="s1">&#39;reading data from ADR4.dat&#39;</span>
+        <span class="nb">print</span> <span class="s1">&#39;Building database: WARNING - FILE PRODUCED WILL BE ROUGHLY 4.6 GB&#39;</span>
+        <span class="n">cont</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">(</span><span class="s1">&#39;Continue? y/n: &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">cont</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="n">FILE</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ADR4.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+        <span class="n">orbs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">already_match</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([])</span>  <span class="c1">### &lt;-- Hash table of objects that already exist</span>
+        <span class="n">match_match</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">LINE</span> <span class="ow">in</span> <span class="n">FILE</span><span class="p">:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">LINE</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="nb">float</span><span class="p">(</span> <span class="n">k</span><span class="p">[</span><span class="mi">50</span><span class="p">]</span> <span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s%s%s%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">k</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span><span class="n">k</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span><span class="n">k</span><span class="p">[</span><span class="mi">52</span><span class="p">],</span><span class="n">k</span><span class="p">[</span><span class="mi">53</span><span class="p">])</span>
+
+                <span class="k">if</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">already_match</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">already_match</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">orbs</span><span class="p">)</span><span class="o">%</span><span class="mi">10000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">orbs</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">already_match</span><span class="p">)</span>
+
+                <span class="n">this_orb</span> <span class="o">=</span>  <span class="n">moc_orbit</span><span class="p">(</span> <span class="n">k</span> <span class="p">)</span>
+                <span class="k">if</span> <span class="n">this_orb</span><span class="o">.</span><span class="n">_ecc</span> <span class="o">&gt;</span> <span class="mf">0.8</span> <span class="ow">or</span> <span class="n">this_orb</span><span class="o">.</span><span class="n">_sma</span> <span class="o">&gt;</span> <span class="mf">7.0</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="n">orbs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">this_orb</span> <span class="p">)</span>
+
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+        <span class="n">FILE</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">del</span> <span class="n">already_match</span>
+
+        <span class="nb">print</span> <span class="s1">&#39;writing data to ADR4.db&#39;</span>
+
+        <span class="n">d</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;ADR4.db&#39;</span><span class="p">)</span>
+        <span class="n">d</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">orbs</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="nb">print</span> <span class="s1">&#39;reading data from ADR4.db&#39;</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;ADR4.db&#39;</span><span class="p">)</span>
+        <span class="n">orbs</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+    <span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">orbs</span><span class="p">),</span> <span class="s1">&#39; orbits read.&#39;</span>
+
+    <span class="c1">### 16x9 figure, all black, no frames visible, set bbox=tight later to ensure crop</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pylab</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span><span class="n">axis_bgcolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1">### Initialize a few values</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">scale0</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">angleX</span> <span class="o">=</span> <span class="mf">90.0</span> <span class="c1">#90.0</span>
+    <span class="n">fov</span> <span class="o">=</span> <span class="mf">5.0</span>
+    <span class="n">N_cores</span> <span class="o">=</span> <span class="mi">8</span>
+
+    <span class="k">if</span> <span class="n">core</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">frames_for_this_core</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">core</span><span class="p">),</span><span class="mi">5000</span><span class="p">,</span> <span class="n">N_cores</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">frames_for_this_core</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5000</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        
+    <span class="n">breaktimes_zoom</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="o">*</span><span class="mi">24</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="mi">24</span><span class="p">,</span> <span class="mi">200</span> <span class="o">*</span> <span class="mi">24</span> <span class="p">]</span>
+    <span class="n">breakvals_zoom</span>  <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span>   <span class="mf">3.0</span><span class="p">,</span> <span class="mf">20.0</span> <span class="p">]</span>
+
+    <span class="n">breaktimes_angle</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">150</span> <span class="o">*</span> <span class="mi">24</span> <span class="p">]</span>
+    <span class="n">breakvals_angle</span>  <span class="o">=</span> <span class="p">[</span> <span class="mf">90.0</span><span class="p">,</span>  <span class="o">-</span><span class="mf">180.0</span> <span class="p">]</span>
+
+    <span class="n">deltat_for_title</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">*</span> <span class="mi">24</span> <span class="c1">### &lt; seven seconds of slop for title graphic</span>
+
+    <span class="n">xEarth</span><span class="p">,</span> <span class="n">yEarth</span> <span class="o">=</span> <span class="n">draw_ring</span><span class="p">(</span> <span class="mf">1.0</span> <span class="p">)</span>
+    <span class="n">xVenus</span><span class="p">,</span> <span class="n">yVenus</span> <span class="o">=</span> <span class="n">draw_ring</span><span class="p">(</span> <span class="mf">0.723</span> <span class="p">)</span>
+    <span class="n">xMars</span><span class="p">,</span> <span class="n">yMars</span>   <span class="o">=</span> <span class="n">draw_ring</span><span class="p">(</span> <span class="mf">1.523</span> <span class="p">)</span>
+    <span class="n">xMerc</span><span class="p">,</span> <span class="n">yMerc</span>   <span class="o">=</span> <span class="n">draw_ring</span><span class="p">(</span> <span class="mf">0.387</span> <span class="p">)</span>
+    <span class="n">xJup</span><span class="p">,</span> <span class="n">yJup</span>     <span class="o">=</span> <span class="n">draw_ring</span><span class="p">(</span> <span class="mf">5.204</span> <span class="p">)</span>
+
+    <span class="n">planets</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="n">xEarth</span><span class="p">,</span> <span class="n">yEarth</span><span class="p">],</span>
+                <span class="p">[</span><span class="n">xVenus</span><span class="p">,</span> <span class="n">yVenus</span><span class="p">],</span> 
+                <span class="p">[</span><span class="n">xMars</span><span class="p">,</span> <span class="n">yMars</span><span class="p">],</span>
+                <span class="p">[</span><span class="n">xMerc</span><span class="p">,</span> <span class="n">yMerc</span><span class="p">],</span>
+                <span class="p">[</span><span class="n">xJup</span><span class="p">,</span> <span class="n">yJup</span><span class="p">]]</span>
+
+    <span class="k">for</span> <span class="n">FRAME</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4000</span> <span class="o">+</span> <span class="n">deltat_for_title</span><span class="p">):</span>
+
+        <span class="n">M</span> <span class="o">=</span> <span class="mf">51464.17418</span> <span class="o">+</span> <span class="p">(</span><span class="n">FRAME</span><span class="o">-</span><span class="n">deltat_for_title</span><span class="p">)</span> <span class="o">*</span> <span class="mf">3.0</span>  <span class="c1">### &lt;- three-day timestep</span>
+
+        <span class="n">angleX</span>  <span class="o">=</span> <span class="n">cameraspline</span><span class="p">(</span> <span class="n">FRAME</span><span class="o">-</span><span class="n">deltat_for_title</span><span class="p">,</span> <span class="n">breaktimes_angle</span><span class="p">,</span> <span class="n">breakvals_angle</span> <span class="p">)</span>
+        <span class="n">fov</span>     <span class="o">=</span> <span class="n">cameraspline</span><span class="p">(</span> <span class="n">FRAME</span><span class="o">-</span><span class="n">deltat_for_title</span><span class="p">,</span> <span class="n">breaktimes_zoom</span><span class="p">,</span> <span class="n">breakvals_zoom</span> <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">FRAME</span> <span class="ow">in</span> <span class="n">frames_for_this_core</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;./MOC_MOVIE/tmp_</span><span class="si">%s</span><span class="s1">.png&#39;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">FRAME</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">))</span> <span class="p">):</span>
+            <span class="k">continue</span>
+
+        <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">zo</span><span class="o">=</span><span class="p">[],[],[],[],[]</span>
+        <span class="n">s2</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">rv</span> <span class="o">=</span> <span class="p">[],[],[]</span>
+        <span class="n">time0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">orb</span> <span class="ow">in</span> <span class="n">orbs</span><span class="p">:</span>
+            <span class="c1">### compute ecliptic cartesian coords</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">orb</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span> <span class="n">M</span> <span class="p">)</span>
+        
+            <span class="c1">### rotate for camera position</span>
+            <span class="n">r0</span> <span class="o">=</span> <span class="n">Point3D</span><span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
+            <span class="n">rt</span> <span class="o">=</span> <span class="n">r0</span><span class="o">.</span><span class="n">rotateX</span><span class="p">(</span><span class="n">angleX</span><span class="p">)</span>
+
+            <span class="c1">### check to see if we should continue: is point in front of camera?</span>
+            <span class="k">if</span> <span class="n">rt</span><span class="o">.</span><span class="n">z</span> <span class="o">&gt;</span> <span class="o">-</span><span class="n">fov</span><span class="p">:</span>
+
+                <span class="c1">### do perspective projection</span>
+                <span class="n">p</span>  <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="mf">16.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">fov</span> <span class="p">)</span> 
+
+                <span class="n">r2cam</span> <span class="o">=</span> <span class="p">(</span> <span class="n">rt</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rt</span><span class="o">.</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">rt</span><span class="o">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">fov</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+                <span class="n">rv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">r2cam</span> <span class="p">)</span>
+
+                <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="p">)</span>
+                <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="p">)</span>
+
+                <span class="n">zo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="o">-</span><span class="n">rt</span><span class="o">.</span><span class="n">z</span> <span class="p">)</span>
+
+                <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">(</span><span class="mf">2000.0</span><span class="o">/</span><span class="n">r2cam</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span> <span class="p">(</span><span class="mf">5.0</span><span class="o">-</span><span class="n">orb</span><span class="o">.</span><span class="n">_H</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span> <span class="p">)</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="p">)</span> <span class="c1">### &lt;- balance of rigorous point size and managing complexity.</span>
+                <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">orb</span><span class="o">.</span><span class="n">_RGB</span>  <span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span>
+
+        <span class="c1">### draw &#39;rings&#39; for four planets</span>
+        <span class="k">for</span> <span class="n">planet</span> <span class="ow">in</span> <span class="n">planets</span><span class="p">:</span>
+            <span class="n">xP</span><span class="p">,</span><span class="n">yP</span><span class="p">,</span><span class="n">zP</span> <span class="o">=</span> <span class="p">[],[],[]</span>
+
+            <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">planet</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+                <span class="n">r0</span> <span class="o">=</span> <span class="n">Point3D</span><span class="p">(</span> <span class="n">planet</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">T</span><span class="p">],</span> <span class="n">planet</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">T</span><span class="p">],</span> <span class="mf">0.0</span> <span class="p">)</span>
+                <span class="n">rt</span> <span class="o">=</span> <span class="n">r0</span><span class="o">.</span><span class="n">rotateX</span><span class="p">(</span><span class="n">angleX</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">rt</span><span class="o">.</span><span class="n">z</span> <span class="o">&gt;</span> <span class="o">-</span><span class="n">fov</span><span class="p">:</span>
+                    <span class="n">p</span>  <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="mf">16.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">fov</span> <span class="p">)</span> 
+                    <span class="n">xP</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="p">)</span>
+                    <span class="n">yP</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="p">)</span>
+                    <span class="n">zP</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="o">-</span><span class="n">rt</span><span class="o">.</span><span class="n">z</span> <span class="p">)</span>
+
+            <span class="n">ang_ratio</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">angleX</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.0</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">180.0</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">xP</span><span class="p">,</span> <span class="n">yP</span><span class="p">,</span> <span class="s1">&#39;w-&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">ang_ratio</span> <span class="o">/</span> <span class="mf">90.0</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>  <span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="n">zP</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span> <span class="p">)</span>
+
+        <span class="c1">### compute &#39;bokeh&#39; sizes</span>
+        <span class="n">scale2cam</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="o">+</span> <span class="mf">4.0</span> <span class="o">/</span> <span class="p">(</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">r2cam</span> <span class="p">)</span>
+        <span class="n">s2</span> <span class="o">=</span> <span class="p">(</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span> <span class="n">s</span> <span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span> <span class="n">scale2cam</span> <span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">1.0</span>
+
+        <span class="n">time1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span> <span class="s1">&#39;Compute time: </span><span class="si">%.2f</span><span class="s1"> s&#39;</span><span class="o">%</span><span class="p">(</span> <span class="n">time1</span> <span class="o">-</span> <span class="n">time0</span> <span class="p">)</span>
+
+        <span class="c1">### hard points</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="n">zo</span><span class="p">)</span>
+
+        <span class="c1">### &quot;bokeh&quot; points</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="n">zo</span><span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+        <span class="n">pylab</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;./MOC_MOVIE/tmp_</span><span class="si">%s</span><span class="s1">.png&#39;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">FRAME</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">)),</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span>  <span class="p">)</span>
+
+        <span class="n">time2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span> <span class="s1">&#39;Render time: </span><span class="si">%.2f</span><span class="s1"> s&#39;</span><span class="o">%</span><span class="p">(</span> <span class="n">time2</span> <span class="o">-</span> <span class="n">time1</span> <span class="p">)</span>
+
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">core</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="s1">&#39;Error: expects core number (integer 1-8), or 0 to render all on single core.&#39;</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        
+    <span class="n">do_anim</span><span class="p">(</span> <span class="n">core</span> <span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://www.astro.washington.edu/users/ivezic/sdssmoc/sdssmoc.html">Source data</a></li>
+</ul>
+</div>
+</div>
+
+
+  
+    </div>
+  
+<footer class="footer">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Scipy Conference, designed by Nelle Varoquaux.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2.<br/>
+    </p>
+</footer>
+  </body>
+</html>
