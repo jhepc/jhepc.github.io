@@ -1,0 +1,12 @@
+Entry 9: How echo chambers emerge from social media
+====================================================
+
+
+.. raw:: html
+
+    <video width=640 controls><source src="entry_9.mp4"/></video>
+If the video above doesn't play, try downloading `from this link <entry_9.mp4>`_
+
+This is an interactive demo illustrating how two basic mechanisms of social media --- influencing friends opinion and unfriending people with different ideas --- can lead to polarized and segregated social networks, which is detrimental to social harmony and the wisdom of the crowd. Each node in the network represents a user. Its size represents user's popularity (number of friends) and its color represents user's political opinion. The demo runs agent-based simulations with three parameters. It allows users to monitor the network dynamics and track the opinion evolution with different model configurations. A snapshot of the final state is provided for several parameter settings. This visualization can be used to warn the public about the danger of social media as it facilitates the emergence of online echo chambers.
+
+
