@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
   
     <title>John Hunter Excellence Plotting Contest &#8212; 2015 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
   <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
@@ -18,20 +18,12 @@
 
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.0001',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -50,8 +42,7 @@
 
 
 
-  </head>
-  <body><div class="navbar">
+  </head><body><div class="navbar">
     <a class="navbar-brand" href="../../index.html">
       <img src="../../_static/logos/logo_1.png" \>
     </a>
@@ -80,7 +71,7 @@
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Edward Taylor</li>
+<li><p>Edward Taylor</p></li>
 </ul>
 </div>
 <div class="section" id="caption">
@@ -181,25 +172,25 @@ read!</p>
 </div>
 <div class="section" id="instructions">
 <h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
-<p>There are two <code class="xref py py-obj docutils literal"><span class="pre">json</span></code> archives that contain the data
-for each of the two panels.  There is also the script <code class="xref py py-obj docutils literal"><span class="pre">bimix.py</span></code> that
+<p>There are two <code class="xref py py-obj docutils literal notranslate"><span class="pre">json</span></code> archives that contain the data
+for each of the two panels.  There is also the script <code class="xref py py-obj docutils literal notranslate"><span class="pre">bimix.py</span></code> that
 should use these data to make the two plots.  You can either (i hope!)
-just <code class="xref py py-obj docutils literal"><span class="pre">python</span> <span class="pre">bimix.py</span></code> at the command line, or run <code class="xref py py-obj docutils literal"><span class="pre">bimix.makePlots()</span></code>
+just <code class="xref py py-obj docutils literal notranslate"><span class="pre">python</span> <span class="pre">bimix.py</span></code> at the command line, or run <code class="xref py py-obj docutils literal notranslate"><span class="pre">bimix.makePlots()</span></code>
 in interactive mode.</p>
 </div>
 <div class="section" id="products">
 <h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/bimix_effective.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span> <span class="pre">Panel</span> <span class="pre">1</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/bimix_intrinsic.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span> <span class="pre">Panel</span> <span class="pre">2</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/6c3cdde0bc5cd69ac9fb141ea9bf4e62/bimix_effective.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span> <span class="pre">Panel</span> <span class="pre">1</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/b948fa075f4e71a9cf413f63a05ed1c5/bimix_intrinsic.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span> <span class="pre">Panel</span> <span class="pre">2</span></code></a></p></li>
 </ul>
 </div>
 <div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#! /usr/bin/env python</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /usr/bin/env python</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">p</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">p</span>
 
 <span class="kn">import</span> <span class="nn">json</span>
 
@@ -826,9 +817,9 @@ in interactive mode.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/ENTaylor_bimix.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/bimix_effective.json" download=""><code class="xref download docutils literal"><span class="pre">JSON</span> <span class="pre">source</span> <span class="pre">(Panel</span> <span class="pre">1)</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/bimix_intrinsic.json" download=""><code class="xref download docutils literal"><span class="pre">JSON</span> <span class="pre">source</span> <span class="pre">(Panel</span> <span class="pre">2)</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/5b0c6a22b63bb7e56b4e73d9c5864a36/ENTaylor_bimix.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/6f0ce3b0a1120c6206ab506507594886/bimix_effective.json"><code class="xref download docutils literal notranslate"><span class="pre">JSON</span> <span class="pre">source</span> <span class="pre">(Panel</span> <span class="pre">1)</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/ef3d517af4e613fe27dc6c47a7326233/bimix_intrinsic.json"><code class="xref download docutils literal notranslate"><span class="pre">JSON</span> <span class="pre">source</span> <span class="pre">(Panel</span> <span class="pre">2)</span></code></a></p></li>
 </ul>
 </div>
 </div>
@@ -844,7 +835,7 @@ in interactive mode.</p>
     </p>
     <p>
         &copy; Copyright 2015, Scipy Conference, designed by Nelle Varoquaux.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.<br/>
     </p>
 </footer>
   </body>

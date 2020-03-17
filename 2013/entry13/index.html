@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
   
     <title>John Hunter Excellence Plotting Contest &#8212; 2015 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
   <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
@@ -18,20 +18,12 @@
 
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.0001',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -50,8 +42,7 @@
 
 
 
-  </head>
-  <body><div class="navbar">
+  </head><body><div class="navbar">
     <a class="navbar-brand" href="../../index.html">
       <img src="../../_static/logos/logo_1.png" \>
     </a>
@@ -80,7 +71,7 @@
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Tim Cera</li>
+<li><p>Tim Cera</p></li>
 </ul>
 </div>
 <div class="section" id="description">
@@ -89,20 +80,20 @@
 that it is from a sun centered frame of reference.  Each color of the orbit
 represents 1 week.</p>
 <p>There are two Python scripts, the first is called
-<a class="reference download internal" href="../../_downloads/01_get_ephemeris_telnet.py" download=""><code class="xref download docutils literal"><span class="pre">01_get_ephemeris_telnet.py</span></code></a>
+<a class="reference download internal" download="" href="../../_downloads/8580b677889b69481883efdb4ea616a9/01_get_ephemeris_telnet.py"><code class="xref download docutils literal notranslate"><span class="pre">01_get_ephemeris_telnet.py</span></code></a>
 which will get the planet and moon ephemeris data from the Jet
 Propulsion Lab Horizons server and save them in text files in the
-subdirectory <code class="xref py py-obj docutils literal"><span class="pre">ephemeris_helio</span></code>.  The script
-<a class="reference download internal" href="../../_downloads/02_create_plots.py" download=""><code class="xref download docutils literal"><span class="pre">02_create_plots.py</span></code></a> can then be run.
-<code class="xref py py-obj docutils literal"><span class="pre">02_create_plots.py</span></code> develops hundreds of plots, I am only submitting
-for the competition <code class="xref py py-obj docutils literal"><span class="pre">solar_system_plot_page_021.eps</span></code>.</p>
+subdirectory <code class="xref py py-obj docutils literal notranslate"><span class="pre">ephemeris_helio</span></code>.  The script
+<a class="reference download internal" download="" href="../../_downloads/c183be2afa5bb0428d2c158b8e5d4114/02_create_plots.py"><code class="xref download docutils literal notranslate"><span class="pre">02_create_plots.py</span></code></a> can then be run.
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">02_create_plots.py</span></code> develops hundreds of plots, I am only submitting
+for the competition <code class="xref py py-obj docutils literal notranslate"><span class="pre">solar_system_plot_page_021.eps</span></code>.</p>
 </div>
 <div class="section" id="reproducing-plots">
 <h2>Reproducing plots<a class="headerlink" href="#reproducing-plots" title="Permalink to this headline">¶</a></h2>
-<p>Run <code class="xref py py-obj docutils literal"><span class="pre">01_get_ephemeris_telnet.py</span></code> to create the required data sets that
-will be stored in a subdirectory named <code class="xref py py-obj docutils literal"><span class="pre">ephemeris_helio</span></code>.</p>
-<p>Run <code class="xref py py-obj docutils literal"><span class="pre">02_create_plots.py</span></code> to create EPS plots in <code class="xref py py-obj docutils literal"><span class="pre">figs_eps</span></code>, and PNG
-plots in <code class="xref py py-obj docutils literal"><span class="pre">figs_png</span></code>.  It creates hundreds of plots.</p>
+<p>Run <code class="xref py py-obj docutils literal notranslate"><span class="pre">01_get_ephemeris_telnet.py</span></code> to create the required data sets that
+will be stored in a subdirectory named <code class="xref py py-obj docutils literal notranslate"><span class="pre">ephemeris_helio</span></code>.</p>
+<p>Run <code class="xref py py-obj docutils literal notranslate"><span class="pre">02_create_plots.py</span></code> to create EPS plots in <code class="xref py py-obj docutils literal notranslate"><span class="pre">figs_eps</span></code>, and PNG
+plots in <code class="xref py py-obj docutils literal notranslate"><span class="pre">figs_png</span></code>.  It creates hundreds of plots.</p>
 <p>The plot that I am submitting for the competition is
 ‘figs_eps/solar_system_plot_page_021.eps’.</p>
 <p>Kindest regards,
@@ -111,12 +102,12 @@ Tim Cera</p>
 <div class="section" id="products">
 <h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/solar_system_plot_page_021.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/905093e60d369a6e721e5cf2a70b63b2/solar_system_plot_page_021.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span></code></a></p></li>
 </ul>
 </div>
 <div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">This script collects ephemeris data from JPL Horizons and puts it into the</span>
 <span class="sd">sub-directory ephemeris_helio.</span>
@@ -285,9 +276,9 @@ Tim Cera</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/01_get_ephemeris_telnet.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">01_get_ephemeris_telnet.py</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/8580b677889b69481883efdb4ea616a9/01_get_ephemeris_telnet.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">01_get_ephemeris_telnet.py</span></code></a></p></li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -299,10 +290,10 @@ Tim Cera</p>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">N</span>
 
 <span class="kn">import</span> <span class="nn">orbit_plot_utils</span>
-<span class="kn">from</span> <span class="nn">variables</span> <span class="k">import</span> <span class="n">data_dict</span>
-<span class="kn">from</span> <span class="nn">variables</span> <span class="k">import</span> <span class="n">color_table</span>
+<span class="kn">from</span> <span class="nn">variables</span> <span class="kn">import</span> <span class="n">data_dict</span>
+<span class="kn">from</span> <span class="nn">variables</span> <span class="kn">import</span> <span class="n">color_table</span>
 
-<span class="kn">from</span> <span class="nn">matplotlib.font_manager</span> <span class="k">import</span> <span class="n">FontProperties</span>
+<span class="kn">from</span> <span class="nn">matplotlib.font_manager</span> <span class="kn">import</span> <span class="n">FontProperties</span>
 <span class="n">ital</span> <span class="o">=</span> <span class="n">FontProperties</span><span class="p">()</span>
 <span class="n">ital</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;italic&#39;</span><span class="p">)</span>
 
@@ -738,9 +729,9 @@ Tim Cera</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/02_create_plots.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">02_create_plots.py</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/c183be2afa5bb0428d2c158b8e5d4114/02_create_plots.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">02_create_plots.py</span></code></a></p></li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">string</span>
@@ -753,7 +744,7 @@ Tim Cera</p>
 <span class="n">EPHEMERIS_SHIFT</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">-</span> <span class="mi">330</span>
 
 <span class="k">class</span> <span class="nc">PlotUtils</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miny</span><span class="o">=</span><span class="mf">96798622.</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">maxy</span> <span class="o">=</span> <span class="mf">96798622.</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miny</span><span class="o">=</span><span class="mf">96798622.</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">maxy</span> <span class="o">=</span> <span class="mf">96798622.</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">months_dict</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;Jan&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                              <span class="s1">&#39;Feb&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                              <span class="s1">&#39;Mar&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
@@ -838,9 +829,9 @@ Tim Cera</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/orbit_plot_utils.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">orbit_plot_utils.py</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/0aac03dc892dd1022ee73560121e84fd/orbit_plot_utils.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">orbit_plot_utils.py</span></code></a></p></li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">import</span> <span class="nn">datetime</span>
 
@@ -3455,7 +3446,7 @@ Tim Cera</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/variables.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">variables.py</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/1d8c939290ba04fed7502ccb35d9f97e/variables.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">variables.py</span></code></a></p></li>
 </ul>
 </div>
 </div>
@@ -3471,7 +3462,7 @@ Tim Cera</p>
     </p>
     <p>
         &copy; Copyright 2015, Scipy Conference, designed by Nelle Varoquaux.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.<br/>
     </p>
 </footer>
   </body>
