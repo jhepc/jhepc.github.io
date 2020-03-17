@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   
     <title>John Hunter Excellence Plotting Contest &#8212; 2015 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
   <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
@@ -18,12 +18,20 @@
 
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -42,7 +50,8 @@
 
 
 
-  </head><body><div class="navbar">
+  </head>
+  <body><div class="navbar">
     <a class="navbar-brand" href="../../index.html">
       <img src="../../_static/logos/logo_1.png" \>
     </a>
@@ -71,7 +80,7 @@
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Ludwig Schwardt</p></li>
+<li>Ludwig Schwardt</li>
 </ul>
 </div>
 <div class="section" id="description">
@@ -88,12 +97,12 @@ archive, just to be different!</p>
 <div class="section" id="products">
 <h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/7c96b5442fee08bffb71ac337382f332/unknown_pleasures.pdf"><code class="xref download docutils literal notranslate"><span class="pre">unknown_pleasures.pdf</span></code></a></p></li>
+<li><a class="reference download internal" href="../../_downloads/unknown_pleasures.pdf" download=""><code class="xref download docutils literal"><span class="pre">unknown_pleasures.pdf</span></code></a></li>
 </ul>
 </div>
 <div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 <span class="c1">#</span>
 <span class="c1"># Create your own Unknown Pleasures album cover! See the original at</span>
 <span class="c1"># http://en.wikipedia.org/wiki/Unknown_Pleasures</span>
@@ -109,9 +118,9 @@ archive, just to be different!</p>
 <span class="c1">#</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">resample</span><span class="p">,</span> <span class="n">filtfilt</span><span class="p">,</span> <span class="n">get_window</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="k">import</span> <span class="n">resample</span><span class="p">,</span> <span class="n">filtfilt</span><span class="p">,</span> <span class="n">get_window</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Polygon</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="k">import</span> <span class="n">Polygon</span>
 
 <span class="c1"># The integrated pulse profile for the original pulsar B1919+21 (the same</span>
 <span class="c1"># pulsar used on the Unknown Pleasures cover), obtained from the EPN archive</span>
@@ -185,7 +194,7 @@ archive, just to be different!</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/ac8dfdcf2b241dbbc5e7a9792f771c02/unknown_pleasures.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span></code></a></p></li>
+<li><a class="reference download internal" href="../../_downloads/unknown_pleasures.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span></code></a></li>
 </ul>
 </div>
 </div>
@@ -201,7 +210,7 @@ archive, just to be different!</p>
     </p>
     <p>
         &copy; Copyright 2015, Scipy Conference, designed by Nelle Varoquaux.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.<br/>
     </p>
 </footer>
   </body>

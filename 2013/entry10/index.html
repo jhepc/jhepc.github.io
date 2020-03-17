@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   
     <title>John Hunter Excellence Plotting Contest &#8212; 2015 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
   <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
@@ -18,12 +18,20 @@
 
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -42,7 +50,8 @@
 
 
 
-  </head><body><div class="navbar">
+  </head>
+  <body><div class="navbar">
     <a class="navbar-brand" href="../../index.html">
       <img src="../../_static/logos/logo_1.png" \>
     </a>
@@ -71,7 +80,7 @@
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Kristen Thyng</p></li>
+<li>Kristen Thyng</li>
 </ul>
 </div>
 <div class="section" id="description">
@@ -106,10 +115,10 @@ the turbines themselves.</p>
 <div class="section" id="products">
 <h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/d3d04d4ba84cfd95e8c5ea395a070cff/tkemax.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span></code></a></p></li>
+<li><a class="reference download internal" href="../../_downloads/tkemax.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span></code></a></li>
 </ul>
 <p>Source</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default"><div class="highlight"><pre><span></span>
 
 
 <span class="kn">import</span> <span class="nn">plot_gen</span> <span class="k">as</span> <span class="nn">pg</span>
@@ -152,9 +161,9 @@ the turbines themselves.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/10caa7e3631743e4288dbf0d321f7358/run.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">(run.py)</span></code></a></p></li>
+<li><a class="reference download internal" href="../../_downloads/run.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">(run.py)</span></code></a></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">troc_plot_gen.py</span>
 <span class="sd">Kristen M. Thyng</span>
 <span class="sd">November 2012</span>
@@ -189,16 +198,16 @@ the turbines themselves.</p>
 <span class="c1"># matplotlib.use(&quot;Agg&quot;) # set matplotlib to use the backend that does not require a windowing system</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="k">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">colors</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">cm</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">rc</span><span class="p">,</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">cm</span>
 <span class="kn">import</span> <span class="nn">troc_calc</span> <span class="k">as</span> <span class="nn">tr</span>
 <span class="kn">import</span> <span class="nn">pdb</span>
 <span class="kn">import</span> <span class="nn">op</span>
 <span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">netCDF</span>
-<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.inset_locator</span> <span class="kn">import</span> <span class="n">zoomed_inset_axes</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.inset_locator</span> <span class="kn">import</span> <span class="n">mark_inset</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.inset_locator</span> <span class="k">import</span> <span class="n">zoomed_inset_axes</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.inset_locator</span> <span class="k">import</span> <span class="n">mark_inset</span>
 
 <span class="c1">#rc(&#39;text&#39;, usetex=True) # for latex rendering</span>
 <span class="c1">##rc(&#39;font&#39;, family=&#39;serif&#39;)</span>
@@ -385,8 +394,8 @@ the turbines themselves.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/9206df7e662b9f2863930a39bc49a927/plot_gen.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">(plotgen.py)</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/4917de00f785619ecf128c26c652ca2e/diff.npz"><code class="xref download docutils literal notranslate"><span class="pre">diff.npz</span></code></a></p></li>
+<li><a class="reference download internal" href="../../_downloads/plot_gen.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">(plotgen.py)</span></code></a></li>
+<li><a class="reference download internal" href="../../_downloads/diff.npz" download=""><code class="xref download docutils literal"><span class="pre">diff.npz</span></code></a></li>
 </ul>
 </div>
 </div>
@@ -402,7 +411,7 @@ the turbines themselves.</p>
     </p>
     <p>
         &copy; Copyright 2015, Scipy Conference, designed by Nelle Varoquaux.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.<br/>
     </p>
 </footer>
   </body>

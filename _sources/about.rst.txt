@@ -58,6 +58,4 @@ Additional information
 
 Questions regarding the contest can be sent to jhepc.organizers@gmail.com
 
-John Hunter Excellence in Plotting Contest Co-Chairs
-Madicken Munk
-Nelle Varoquaux
+John Hunter Excellence in Plotting Contest Co-Chairs, Madicken Munk and Nelle Varoquaux

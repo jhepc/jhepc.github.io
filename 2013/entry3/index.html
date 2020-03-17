@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   
     <title>John Hunter Excellence Plotting Contest &#8212; 2015 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
   <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
@@ -18,12 +18,20 @@
 
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0001',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -42,7 +50,8 @@
 
 
 
-  </head><body><div class="navbar">
+  </head>
+  <body><div class="navbar">
     <a class="navbar-brand" href="../../index.html">
       <img src="../../_static/logos/logo_1.png" \>
     </a>
@@ -67,16 +76,16 @@
   
   <div class="section" id="entry-3-third-place">
 <h1>Entry 3 (Third Place)<a class="headerlink" href="#entry-3-third-place" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-default">
+<div class="figure">
 <img alt="../../_images/entry3.png" src="../../_images/entry3.png" />
 </div>
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><p>Jake Vanderplas</p></li>
-<li><p>Zeljko Ivezic</p></li>
-<li><p>Andrew Connolly</p></li>
+<li>Jake Vanderplas</li>
+<li>Zeljko Ivezic</li>
+<li>Andrew Connolly</li>
 </ul>
 </div></blockquote>
 <p>This figure is based on data presented in figures 3-4 of Parker &amp;
@@ -84,10 +93,10 @@ Ivezic et al (2008). A similar figure appears in the book “Statistics,
 Data Mining, and Machine Learning in Astronomy”, by Ivezic, Connolly,
 Vanderplas, and Gray (2013).</p>
 <p>Running this code requires astroML, a lightweight python package which
-can be quickly installed using <code class="xref py py-obj docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">astroML</span></code>.  See
+can be quickly installed using <code class="xref py py-obj docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">astroML</span></code>.  See
 <a class="reference external" href="http://astroML.github.com">http://astroML.github.com</a> for more information.  AstroML will
 automatically download and cache the required dataset to
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">$HOME/astroML_data</span></code>.</p>
+<code class="xref py py-obj docutils literal"><span class="pre">$HOME/astroML_data</span></code>.</p>
 </div>
 <div class="section" id="figure-caption">
 <h2>Figure Caption<a class="headerlink" href="#figure-caption" title="Permalink to this headline">¶</a></h2>
@@ -119,12 +128,12 @@ origin.</p>
 <div class="section" id="products">
 <h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/ba8404d0b8fc253cb6c535a20af056dc/asteroids.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span></code></a></p></li>
+<li><a class="reference download internal" href="../../_downloads/asteroids.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span></code></a></li>
 </ul>
 </div>
 <div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">astroML.datasets</span> <span class="kn">import</span> <span class="n">fetch_moving_objects</span>
 <span class="kn">from</span> <span class="nn">astroML.plotting.tools</span> <span class="kn">import</span> <span class="n">devectorize_axes</span>
@@ -169,7 +178,7 @@ origin.</p>
 
 <span class="c1">#------------------------------------------------------------</span>
 <span class="c1"># Fetch data and extract the desired quantities</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">fetch_moving_objects</span><span class="p">(</span><span class="n">Parker2008_cuts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">fetch_moving_objects</span><span class="p">(</span><span class="n">Parker2008_cuts</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">mag_a</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;mag_a&#39;</span><span class="p">]</span>
 <span class="n">mag_i</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;mag_i&#39;</span><span class="p">]</span>
 <span class="n">mag_z</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;mag_z&#39;</span><span class="p">]</span>
@@ -242,7 +251,7 @@ origin.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/6a7dee85399c56d7419e1e739246cff7/entry3.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span></code></a></p></li>
+<li><a class="reference download internal" href="../../_downloads/entry3.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span></code></a></li>
 </ul>
 </div>
 </div>
@@ -258,7 +267,7 @@ origin.</p>
     </p>
     <p>
         &copy; Copyright 2015, Scipy Conference, designed by Nelle Varoquaux.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.<br/>
     </p>
 </footer>
   </body>
