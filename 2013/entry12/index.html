@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
     <title>John Hunter Excellence Plotting Contest &#8212; 2015 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
   <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
@@ -18,20 +19,12 @@
 
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.0001',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -50,8 +43,7 @@
 
 
 
-  </head>
-  <body><div class="navbar">
+  </head><body><div class="navbar">
     <a class="navbar-brand" href="../../index.html">
       <img src="../../_static/logos/logo_1.png" \>
     </a>
@@ -80,15 +72,15 @@
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Arulalan.T</li>
+<li><p>Arulalan.T</p></li>
 </ul>
 </div>
 <div class="section" id="about-the-data">
 <h2>About the data<a class="headerlink" href="#about-the-data" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Madden-Julian Oscillation Phase 2 Dimensional Diagram</p>
+<li><p>Madden-Julian Oscillation Phase 2 Dimensional Diagram</p>
 <blockquote>
-<div><p>The nc file <a class="reference download internal" href="../../_downloads/mjo_npcs.nc" download=""><code class="xref download docutils literal"><span class="pre">mjo_npcs.nc</span></code></a> contains MJO
+<div><p>The nc file <a class="reference download internal" download="" href="../../_downloads/e995280817fd8229fbda824a2429dca5/mjo_npcs.nc"><code class="xref download docutils literal notranslate"><span class="pre">mjo_npcs.nc</span></code></a> contains MJO
 Normalized PC1 &amp; PC2 for the years from 1979-1-1 to 2005-12-31. I
 Just plotted for the first year alone.  User can test/draw the
 phase diagrams with different years dataset.  This mjo pc1, pc2
@@ -97,9 +89,9 @@ is produced by myself using my python/uvcdat code.</p>
 <a class="reference external" href="http://climate.snu.ac.kr/mjo_diagnostics/index.htm">http://climate.snu.ac.kr/mjo_diagnostics/index.htm</a></p>
 </div></blockquote>
 </li>
-<li><p class="first">Monsoon Intraseasonal Oscillation Phase 2 Dimensional Diagram</p>
+<li><p>Monsoon Intraseasonal Oscillation Phase 2 Dimensional Diagram</p>
 <blockquote>
-<div><p>The nc file <a class="reference download internal" href="../../_downloads/miso_phases.nc" download=""><code class="xref download docutils literal"><span class="pre">miso_phases.nc</span></code></a> is a fake
+<div><p>The nc file <a class="reference download internal" download="" href="../../_downloads/d790e70d40b4f75a1f27c2445654bc74/miso_phases.nc"><code class="xref download docutils literal notranslate"><span class="pre">miso_phases.nc</span></code></a> is a fake
 data produced by myself to plot the Monsoon Intraseasonal
 Oscillation Phase.</p>
 <p>Plot Properties Reference: “An Indian monsoon intraseasonal
@@ -115,9 +107,9 @@ DOI 10.1007/s00382-012-1462-5</p>
 <p>There is no module/method/function in python/cdat to plot these kind
 of (8) phase diagrams (As for as I know). So I just written this
 python function phase2d to plot it.</p>
-<p><code class="xref py py-obj docutils literal"><span class="pre">phase2d</span></code> function needs it dependencies modules which are all written
-by myself namely <code class="xref py py-obj docutils literal"><span class="pre">timeutils</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">trig</span></code>.</p>
-<p>In <code class="xref py py-obj docutils literal"><span class="pre">timeutils</span></code> I have written more than 20 methods (about 3000 lines)
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">phase2d</span></code> function needs it dependencies modules which are all written
+by myself namely <code class="xref py py-obj docutils literal notranslate"><span class="pre">timeutils</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">trig</span></code>.</p>
+<p>In <code class="xref py py-obj docutils literal notranslate"><span class="pre">timeutils</span></code> I have written more than 20 methods (about 3000 lines)
 to make time utilities. But here I have included only 2 methods which
 is needed to the phase2d function. Soon we will release the full
 timeutils module to the public!</p>
@@ -126,51 +118,45 @@ timeutils module to the public!</p>
 <div class="section" id="reproducing-plots">
 <h2>Reproducing plots<a class="headerlink" href="#reproducing-plots" title="Permalink to this headline">¶</a></h2>
 <p>To plot and save it as ps files, you may need to run the
-<a class="reference download internal" href="../../_downloads/plot_phase_diagrams.py" download=""><code class="xref download docutils literal"><span class="pre">plot_phase_diagrams.py</span></code></a>.</p>
+<a class="reference download internal" download="" href="../../_downloads/955ddac762799d631903e90ae41dbd63/plot_phase_diagrams.py"><code class="xref download docutils literal notranslate"><span class="pre">plot_phase_diagrams.py</span></code></a>.</p>
 <div class="section" id="dependencies">
 <h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first">To run these python scripts you must need CDAT5.2 <a class="footnote-reference" href="#f1" id="id1">[1]</a> / UVCDAT
-1.2.0 <a class="footnote-reference" href="#f2" id="id2">[2]</a></p>
-</li>
-<li><p class="first">grace software must be installed in your operating system. I didnt
+<li><p>To run these python scripts you must need CDAT5.2 <a class="footnote-reference brackets" href="#f1" id="id1">1</a> / UVCDAT
+1.2.0 <a class="footnote-reference brackets" href="#f2" id="id2">2</a></p></li>
+<li><p>grace software must be installed in your operating system. I didnt
 use VCS, instead of that I used xmgrace package to do line plot.  If
 you are using ubuntu system, then:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ apt-get install grace
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ apt-get install grace
 </pre></div>
 </div>
 </li>
-<li><p class="first">Developed &amp; Tested In Ubuntu 12.04 LTS OS and UVCDAT 1.2.0</p>
-</li>
+<li><p>Developed &amp; Tested In Ubuntu 12.04 LTS OS and UVCDAT 1.2.0</p></li>
 </ul>
-<table class="docutils footnote" frame="void" id="f1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://www2-pcmdi.llnl.gov/cdat">http://www2-pcmdi.llnl.gov/cdat</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="f2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://uv-cdat.llnl.gov/">http://uv-cdat.llnl.gov/</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="http://www2-pcmdi.llnl.gov/cdat">http://www2-pcmdi.llnl.gov/cdat</a></p>
+</dd>
+<dt class="label" id="f2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><a class="reference external" href="http://uv-cdat.llnl.gov/">http://uv-cdat.llnl.gov/</a></p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="products">
 <h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/miso_phase2d_monsoon.pdf" download=""><code class="xref download docutils literal"><span class="pre">miso_phase2d_monsoon.pdf</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/mjo_phase2d_summer.pdf" download=""><code class="xref download docutils literal"><span class="pre">mjo_phase2d_summer.pdf</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/mjo_phase2d_summer_red.pdf" download=""><code class="xref download docutils literal"><span class="pre">mjo_phase2d_summer_red.pdf</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/mjo_phase2d_winter.pdf" download=""><code class="xref download docutils literal"><span class="pre">mjo_phase2d_winter.pdf</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/mjo_phase2d_winter_red.pdf" download=""><code class="xref download docutils literal"><span class="pre">mjo_phase2d_winter_red.pdf</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/phase2d_red.pdf" download=""><code class="xref download docutils literal"><span class="pre">phase2d_red.pdf</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/a5ac57f1bd615a0535ae3188910b394c/miso_phase2d_monsoon.pdf"><code class="xref download docutils literal notranslate"><span class="pre">miso_phase2d_monsoon.pdf</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/0998a61141083be2e95662296d578ac1/mjo_phase2d_summer.pdf"><code class="xref download docutils literal notranslate"><span class="pre">mjo_phase2d_summer.pdf</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/1fd437dc5bafa818f87098136f9dc644/mjo_phase2d_summer_red.pdf"><code class="xref download docutils literal notranslate"><span class="pre">mjo_phase2d_summer_red.pdf</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/69655e6952fcc0992415c1d1a158a5eb/mjo_phase2d_winter.pdf"><code class="xref download docutils literal notranslate"><span class="pre">mjo_phase2d_winter.pdf</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/8037f0ff3252791857e4fe3b5adec37e/mjo_phase2d_winter_red.pdf"><code class="xref download docutils literal notranslate"><span class="pre">mjo_phase2d_winter_red.pdf</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/b41353fff06e9f1d0583598fd46db689/phase2d_red.pdf"><code class="xref download docutils literal notranslate"><span class="pre">phase2d_red.pdf</span></code></a></p></li>
 </ul>
 </div>
 <div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">.. module:: phase2d</span>
 <span class="sd">   :synopsis: A useful module for plotting 2 dimensional line diagram among</span>
 <span class="sd">              eight phases. phase2d is a generic function to plot any model</span>
@@ -180,8 +166,8 @@ you are using ubuntu system, then:</p>
 <span class="sd">   License : GPL V3</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">cdutil</span>
-<span class="kn">from</span> <span class="nn">genutil</span> <span class="k">import</span> <span class="n">xmgrace</span>
-<span class="kn">from</span> <span class="nn">timeutils</span> <span class="k">import</span> <span class="n">TimeUtility</span>
+<span class="kn">from</span> <span class="nn">genutil</span> <span class="kn">import</span> <span class="n">xmgrace</span>
+<span class="kn">from</span> <span class="nn">timeutils</span> <span class="kn">import</span> <span class="n">TimeUtility</span>
 <span class="kn">import</span> <span class="nn">trig</span>
 
 <span class="n">timobj</span> <span class="o">=</span> <span class="n">TimeUtility</span><span class="p">()</span>
@@ -792,10 +778,10 @@ you are using ubuntu system, then:</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/phase2d.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">phase2d.py</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/929afa935e9dd2c783a8ff857ea1a7bb/phase2d.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">phase2d.py</span></code></a></p></li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span>  <span class="nn">cdms2</span>
-<span class="kn">from</span> <span class="nn">phase2d</span> <span class="k">import</span> <span class="n">mjo_phase2d</span><span class="p">,</span> <span class="n">miso_phase2d</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span>  <span class="nn">cdms2</span>
+<span class="kn">from</span> <span class="nn">phase2d</span> <span class="kn">import</span> <span class="n">mjo_phase2d</span><span class="p">,</span> <span class="n">miso_phase2d</span>
 
 <span class="c1"># plotting MJO Phase diagrams</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">cdms2</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;mjo_npcs.nc&#39;</span><span class="p">)</span>
@@ -858,9 +844,9 @@ you are using ubuntu system, then:</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/plot_phase_diagrams.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">plot_phase_diagrams.py</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/955ddac762799d631903e90ae41dbd63/plot_phase_diagrams.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">plot_phase_diagrams.py</span></code></a></p></li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">atan</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">atan</span>
 
 
 <span class="k">def</span> <span class="nf">getHalfQuadrantOfCircle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -903,9 +889,9 @@ you are using ubuntu system, then:</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/trig.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">trig.py</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/47856c34169d5c33caf2e33eb2bc5ac6/trig.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">trig.py</span></code></a></p></li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">.. module:: timeutils</span>
 <span class="sd">   :synopsis: A useful module for cdtime.comptime conversion to timestr,</span>
 <span class="sd">              moveTime, tRange, xtRange, cdtime.timeAxis and more ...</span>
@@ -920,7 +906,7 @@ you are using ubuntu system, then:</p>
 
 <span class="k">class</span> <span class="nc">_TimeUtilityError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DaysError Error : &quot;</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
             <span class="nb">print</span> <span class="n">i</span>
@@ -944,7 +930,7 @@ you are using ubuntu system, then:</p>
 
 <span class="k">class</span> <span class="nc">TimeUtility</span><span class="p">():</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">timeAxis</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="c1"># set cdtime.comptime pattern regular expression object</span>
@@ -1333,9 +1319,9 @@ you are using ubuntu system, then:</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/timeutils.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">timeutils.py</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/miso_phases.nc" download=""><code class="xref download docutils literal"><span class="pre">Data</span> <span class="pre">1</span> <span class="pre">miso_phases.nc</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/mjo_npcs.nc" download=""><code class="xref download docutils literal"><span class="pre">Data</span> <span class="pre">2</span> <span class="pre">mjo_npcs.nc</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/8c26c9a6dbc4fc292d7de18f1cefba50/timeutils.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span> <span class="pre">timeutils.py</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/d790e70d40b4f75a1f27c2445654bc74/miso_phases.nc"><code class="xref download docutils literal notranslate"><span class="pre">Data</span> <span class="pre">1</span> <span class="pre">miso_phases.nc</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/e995280817fd8229fbda824a2429dca5/mjo_npcs.nc"><code class="xref download docutils literal notranslate"><span class="pre">Data</span> <span class="pre">2</span> <span class="pre">mjo_npcs.nc</span></code></a></p></li>
 </ul>
 </div>
 </div>
@@ -1351,7 +1337,7 @@ you are using ubuntu system, then:</p>
     </p>
     <p>
         &copy; Copyright 2015, Scipy Conference, designed by Nelle Varoquaux.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.2.1.<br/>
     </p>
 </footer>
   </body>

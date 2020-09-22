@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
     <title>John Hunter Excellence Plotting Contest &#8212; 2015 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
   <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
@@ -18,20 +19,12 @@
 
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.0001',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -50,8 +43,7 @@
 
 
 
-  </head>
-  <body><div class="navbar">
+  </head><body><div class="navbar">
     <a class="navbar-brand" href="../../index.html">
       <img src="../../_static/logos/logo_1.png" \>
     </a>
@@ -80,7 +72,7 @@
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Marcel Pinheiro Caraciolo</li>
+<li><p>Marcel Pinheiro Caraciolo</p></li>
 </ul>
 </div>
 <div class="section" id="tools">
@@ -107,12 +99,12 @@ users from several cities of the country.</p>
 <div class="section" id="products">
 <h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/Atepassar_Visualization.pdf" download=""><code class="xref download docutils literal"><span class="pre">Atepassar_Visualization.pdf</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/b694d787637e5c419837789185cf73db/Atepassar_Visualization.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Atepassar_Visualization.pdf</span></code></a></p></li>
 </ul>
 </div>
 <div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#-*-coding:utf-8-*-</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#-*-coding:utf-8-*-</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Visualizing geolocated friendships within a social network in a map.</span>
 
@@ -131,28 +123,28 @@ users from several cities of the country.</p>
 <span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;0.1&#39;</span>
 
 <span class="kn">import</span> <span class="nn">pickle</span>
-<span class="kn">from</span> <span class="nn">optparse</span> <span class="k">import</span> <span class="n">OptionParser</span>
-<span class="kn">from</span> <span class="nn">optparse</span> <span class="k">import</span> <span class="n">SUPPRESS_USAGE</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sqrt</span><span class="p">,</span><span class="n">log</span>
+<span class="kn">from</span> <span class="nn">optparse</span> <span class="kn">import</span> <span class="n">OptionParser</span>
+<span class="kn">from</span> <span class="nn">optparse</span> <span class="kn">import</span> <span class="n">SUPPRESS_USAGE</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span><span class="n">log</span>
 
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
+    <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;error while importing the PIL library.  please install it:  easy_install PIL&#39;</span><span class="p">)</span>
     <span class="n">exit</span><span class="p">()</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pylab</span> <span class="k">import</span> <span class="n">get_cmap</span>
-    <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="k">import</span> <span class="n">ColorConverter</span>
-    <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="k">import</span> <span class="n">rgb2hex</span>
+    <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">get_cmap</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">ColorConverter</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">rgb2hex</span>
     <span class="n">converter</span> <span class="o">=</span> <span class="n">ColorConverter</span><span class="p">()</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;error while importing the MatPlotLib library.  please install it:  easy_install matplotlib&#39;</span><span class="p">)</span>
     <span class="n">exit</span><span class="p">()</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">logspace</span>
+    <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">logspace</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;error while importing the Numpy library.  please install it:  easy_install numpy&#39;</span><span class="p">)</span>
     <span class="n">exit</span><span class="p">()</span>
@@ -265,8 +257,8 @@ users from several cities of the country.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/plot2.py" download=""><code class="xref download docutils literal"><span class="pre">Python</span> <span class="pre">source</span></code></a></li>
-<li><a class="reference external" href="https://github.com/marcelcaraciolo/Geo-Friendship-Visualization">Github project</a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/ea4247d9e95775a671fc167b974b2f3c/plot.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">source</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/marcelcaraciolo/Geo-Friendship-Visualization">Github project</a></p></li>
 </ul>
 </div>
 </div>
@@ -282,7 +274,7 @@ users from several cities of the country.</p>
     </p>
     <p>
         &copy; Copyright 2015, Scipy Conference, designed by Nelle Varoquaux.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.2.1.<br/>
     </p>
 </footer>
   </body>

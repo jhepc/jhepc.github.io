@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
     <title>John Hunter Excellence Plotting Contest &#8212; 2015 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
   <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
@@ -18,20 +19,12 @@
 
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.0001',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -50,8 +43,7 @@
 
 
 
-  </head>
-  <body><div class="navbar">
+  </head><body><div class="navbar">
     <a class="navbar-brand" href="../../index.html">
       <img src="../../_static/logos/logo_1.png" \>
     </a>
@@ -80,7 +72,7 @@
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Filipe Pires Alvarenga Fernandes</li>
+<li><p>Filipe Pires Alvarenga Fernandes</p></li>
 </ul>
 </div>
 <div class="section" id="abstract">
@@ -92,13 +84,13 @@ downloaded from the <a class="reference external" href="http://www.nodc.noaa.gov
 <p>The mixing percentage of each water mass is obtained by solving a linear system
 of equations where we have 3 unknowns and three equations according to <a class="reference external" href="http://www.elsevier.com/books/temperature-salinity-analysis-of-world-ocean-waters/mamayev/978-0-444-41251-5">Mamayev
 (1975)</a>:</p>
-<p><span class="math">\(m_1T_1 + m_2T_2 + m_3T_3 = T\)</span></p>
-<p><span class="math">\(m_1S_1 + m_2S_2 + m_3S_3 = S\)</span></p>
-<p><span class="math">\(m_1 + m_2 + m_3 = 1\)</span></p>
+<p><span class="math notranslate nohighlight">\(m_1T_1 + m_2T_2 + m_3T_3 = T\)</span></p>
+<p><span class="math notranslate nohighlight">\(m_1S_1 + m_2S_2 + m_3S_3 = S\)</span></p>
+<p><span class="math notranslate nohighlight">\(m_1 + m_2 + m_3 = 1\)</span></p>
 <p>where,
-- <span class="math">\(T, S\)</span> are the temperature and salinity data where we want to know the mixing rations;
-- <span class="math">\(T_n, S_n\)</span> the temperature and salinity pairs for the water masses core 1, 2, and 3;
-- <span class="math">\(m_1, m_2, m_3\)</span> the water mass mixing percentages we are looking for.</p>
+- <span class="math notranslate nohighlight">\(T, S\)</span> are the temperature and salinity data where we want to know the mixing rations;
+- <span class="math notranslate nohighlight">\(T_n, S_n\)</span> the temperature and salinity pairs for the water masses core 1, 2, and 3;
+- <span class="math notranslate nohighlight">\(m_1, m_2, m_3\)</span> the water mass mixing percentages we are looking for.</p>
 <p>The water masses we will investigate are the: South Atlantic Central Water
 <a class="reference external" href="http://glossary.ametsoc.org/wiki/Central_water">SACW</a> formed in the center of the South Atlantic Subtropical Gyre; the
 Antarctic Intermediary Water <a class="reference external" href="http://en.wikipedia.org/wiki/Antarctic_Intermediate_Water">AAIW</a> formed in the Antarctic Convergence zone
@@ -139,13 +131,13 @@ cores).</p>
 <div class="section" id="products">
 <h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/mixing_ratio.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/7640a18c2877bc314c94c0394ebe0c5e/mixing_ratio.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span></code></a></p></li>
 </ul>
 </div>
 <div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/water_mass.html" download=""><code class="xref download docutils literal"><span class="pre">IPython</span> <span class="pre">notebook</span></code></a> (<a class="reference download internal" href="../../_downloads/water_mass.ipynb" download=""><code class="xref download docutils literal"><span class="pre">ipynb</span></code></a>)</li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/a826683aa97f416555bd6e39851c5b31/water_mass.html"><code class="xref download docutils literal notranslate"><span class="pre">IPython</span> <span class="pre">notebook</span></code></a> (<a class="reference download internal" download="" href="../../_downloads/94efd57841eaa826766edb07a46efb3c/water_mass.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">ipynb</span></code></a>)</p></li>
 </ul>
 </div>
 </div>
@@ -161,7 +153,7 @@ cores).</p>
     </p>
     <p>
         &copy; Copyright 2015, Scipy Conference, designed by Nelle Varoquaux.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.2.1.<br/>
     </p>
 </footer>
   </body>

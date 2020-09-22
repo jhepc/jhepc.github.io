@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
     <title>John Hunter Excellence Plotting Contest &#8212; 2015 Scipy John Hunter Excellence in Plotting Contest Entries 0.0001 documentation</title>
   <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
@@ -18,20 +19,12 @@
 
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.0001',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -50,8 +43,7 @@
 
 
 
-  </head>
-  <body><div class="navbar">
+  </head><body><div class="navbar">
     <a class="navbar-brand" href="../../index.html">
       <img src="../../_static/logos/logo_1.png" \>
     </a>
@@ -80,7 +72,7 @@
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Anna Bilous</li>
+<li><p>Anna Bilous</p></li>
 </ul>
 <p><strong>Average and single­pulse emission of PSR B1744–24A</strong></p>
 <p>Pulsars are one of the most exotic type of stars ever to be
@@ -134,12 +126,12 @@ and the conditions in the binary system.</p>
 <div class="section" id="products">
 <h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/Ter5A.pdf" download=""><code class="xref download docutils literal"><span class="pre">PDF</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/0059c317446630dfcf8874488eb5c8e0/Ter5A.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span></code></a></p></li>
 </ul>
 </div>
 <div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.lines</span> <span class="k">as</span> <span class="nn">mlines</span>
 <span class="kn">import</span> <span class="nn">skew_projection</span>
@@ -218,7 +210,7 @@ and the conditions in the binary system.</p>
 
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># This serves as an intensive exercise of matplotlib&#39;s transforms</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This serves as an intensive exercise of matplotlib&#39;s transforms</span>
 <span class="c1"># and custom projection API. This example produces a so-called</span>
 <span class="c1"># SkewT-logP diagram, which is a common plot in meteorology for</span>
 <span class="c1"># displaying vertical profiles of temperature. As far as matplotlib is</span>
@@ -229,12 +221,12 @@ and the conditions in the binary system.</p>
 <span class="c1"># necessitates a bunch of custom classes for ticks,spines, and the axis</span>
 <span class="c1"># to handle this.</span>
 
-<span class="kn">from</span> <span class="nn">matplotlib.axes</span> <span class="k">import</span> <span class="n">Axes</span>
+<span class="kn">from</span> <span class="nn">matplotlib.axes</span> <span class="kn">import</span> <span class="n">Axes</span>
 <span class="kn">import</span> <span class="nn">matplotlib.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
 <span class="kn">import</span> <span class="nn">matplotlib.axis</span> <span class="k">as</span> <span class="nn">maxis</span>
 <span class="kn">import</span> <span class="nn">matplotlib.spines</span> <span class="k">as</span> <span class="nn">mspines</span>
 <span class="kn">import</span> <span class="nn">matplotlib.path</span> <span class="k">as</span> <span class="nn">mpath</span>
-<span class="kn">from</span> <span class="nn">matplotlib.projections</span> <span class="k">import</span> <span class="n">register_projection</span>
+<span class="kn">from</span> <span class="nn">matplotlib.projections</span> <span class="kn">import</span> <span class="n">register_projection</span>
 
 <span class="c1"># The sole purpose of this class is to look at the upper, lower, or total</span>
 <span class="c1"># interval as appropriate and see what parts of the tick to draw, if any.</span>
@@ -268,7 +260,7 @@ and the conditions in the binary system.</p>
 <span class="c1"># This class exists to provide two separate sets of intervals to the tick,</span>
 <span class="c1"># as well as create instances of the custom tick</span>
 <span class="k">class</span> <span class="nc">SkewXAxis</span><span class="p">(</span><span class="n">maxis</span><span class="o">.</span><span class="n">XAxis</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">maxis</span><span class="o">.</span><span class="n">XAxis</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">upper_interval</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span>
 
@@ -361,8 +353,8 @@ and the conditions in the binary system.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><a class="reference download internal" href="../../_downloads/Single_pulses.txt" download=""><code class="xref download docutils literal"><span class="pre">Single_pulses.txt</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/Average_emission.npy" download=""><code class="xref download docutils literal"><span class="pre">Average_emission.npy</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/49bed869b71f913f75a7cf9f7a0d5290/Single_pulses.txt"><code class="xref download docutils literal notranslate"><span class="pre">Single_pulses.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/15ab62a189b212e394ae73b8c6b168cb/Average_emission.npy"><code class="xref download docutils literal notranslate"><span class="pre">Average_emission.npy</span></code></a></p></li>
 </ul>
 </div>
 </div>
@@ -378,7 +370,7 @@ and the conditions in the binary system.</p>
     </p>
     <p>
         &copy; Copyright 2015, Scipy Conference, designed by Nelle Varoquaux.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.2.1.<br/>
     </p>
 </footer>
   </body>
